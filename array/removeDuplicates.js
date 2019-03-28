@@ -10,7 +10,7 @@ const removeDuplicates = function(nums) {
   return i + 1;
 }
 
-const oldRemoveDuplicates = function(nums) {
+const firstRemoveDuplicates = function(nums) {
   if (nums.length === 0) return 0;
   let i = 0;
   let j = 1;
