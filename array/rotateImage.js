@@ -28,3 +28,24 @@ const swap = function(matrix, i1, j1, i2, j2) {
   matrix[i1][j1] = matrix[i2][j2];
   matrix[i2][j2] = aux;
 }
+
+
+const rotate2 = function(matrix) {
+  let abs1 = 0;
+  let abs2 = matrix.length - 1;
+  while(abs1 <= abs2) {
+    let p1 = abs1;
+    let p2 = abs2;
+    while (p1 !== abs2) {
+      const aux = matrix[abs1][p1];
+      matrix[abs1][p1] = matrix[p2][abs1];
+      matrix[p2][abs1] = matrix[abs2][p2];
+      martix[abs2][p2] = matrix[p1][abs2];
+      matrix[p1][abs2] = aux;
+      p1++;
+      p2--;
+    }
+    abs1++;
+    abs2--;
+  }
+}
