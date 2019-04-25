@@ -20,8 +20,8 @@ var containsDuplicate3 = function(nums) {
     if (map[i] === undefined) {
       map[i] = true;
     } else {
-      return false;
+      return true;
     }
   }
-  return true;
+  return false;
 }
