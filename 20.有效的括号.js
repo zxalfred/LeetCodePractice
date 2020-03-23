@@ -12,13 +12,21 @@
 var isValid = function(s) {
   const l = s.length
   const arr = []
+  const map = new Map([
+    ['(', ')'],
+    ['{', '}'],
+    ['[', ']']
+  ])
   for (let i = 0; i < l; i++) {
-    if (!arr.length) {
-      arr.push(s[i])
+    const val = s[i]
+    if (map.has(val)) {
+      arr.push(val)
       continue
+    } else if (val !== map.get(arr.pop())) {
+      return false
     }
-    const last = arr[]
   }
+  return !arr.length
 };
 // @lc code=end
 
