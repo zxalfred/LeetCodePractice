@@ -9,7 +9,8 @@
  * Initialize your data structure here.
  */
 var MyStack = function() {
-  this.queue = []
+  this.arr1 = []
+  this.arr2 = []
 };
 
 /**
@@ -18,7 +19,8 @@ var MyStack = function() {
  * @return {void}
  */
 MyStack.prototype.push = function(x) {
-  this.queue.push(x)
+  this.arr2.push(x)
+  return x
 };
 
 /**
@@ -26,18 +28,13 @@ MyStack.prototype.push = function(x) {
  * @return {number}
  */
 MyStack.prototype.pop = function() {
-  if (this.empty()) return undefined
-  const temp = []
-  let result = undefined
-  while (!this.empty()) {
-    const a = this.queue.shift()
-    if (!this.empty()) {
-      temp.push(a)
-    }
-    result = a
+  if (this.arr2.length > this.arr1.length) {
+    [this.arr1, this.arr2] = [this.arr2, this.arr1]
   }
-  this.queue = temp
-  return result
+  while (this.arr1.length > 1) {
+    this.arr2.push(this.arr1.shift())
+  }
+  return this.arr1.shift()
 };
 
 /**
@@ -45,15 +42,14 @@ MyStack.prototype.pop = function() {
  * @return {number}
  */
 MyStack.prototype.top = function() {
-  if (this.empty()) return undefined
-  const temp = []
-  let result = undefined
-  while (!this.empty()) {
-    const a = this.queue.shift()
-    temp.push(a)
-    result = a
+  if (this.arr2.length > this.arr1.length) {
+    [this.arr1, this.arr2] = [this.arr2, this.arr1]
   }
-  this.queue = temp
+  while (this.arr1.length > 1) {
+    this.arr2.push(this.arr1.shift())
+  }
+  const result = this.arr1.shift()
+  this.arr2.push(result)
   return result
 };
 
@@ -62,7 +58,7 @@ MyStack.prototype.top = function() {
  * @return {boolean}
  */
 MyStack.prototype.empty = function() {
-  return !this.queue.length
+  return this.arr1.length === 0 && this.arr2.length === 0
 };
 
 /**

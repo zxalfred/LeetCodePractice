@@ -16,12 +16,6 @@ var MyQueue = function() {
  * @return {void}
  */
 MyQueue.prototype.push = function(x) {
-  if (!this.inputStack.length && this.outputStack.length) {
-    while (this.outputStack.length) {
-      const temp = this.outputStack.pop()
-      this.inputStack.push(temp)
-    }
-  }
   this.inputStack.push(x)
 };
 
