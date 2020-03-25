@@ -1,3 +1,15 @@
+/*
+ * @lc app=leetcode.cn id=239 lang=javascript
+ *
+ * [239] 滑动窗口最大值
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
 var maxSlidingWindow = function(nums, k) {
   const window = []
   const result = []
@@ -19,5 +31,5 @@ var maxSlidingWindow = function(nums, k) {
   
   return result
 }
+// @lc code=end
 
-maxSlidingWindow([1,3,1,2,0,5], 3)
