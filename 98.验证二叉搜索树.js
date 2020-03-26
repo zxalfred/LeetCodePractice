@@ -17,31 +17,21 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-  if (!root) return true
+  const validate = (node, lower, upper) => {
+    if (!node) return true
 
-  let leftValid = true
-  let rightValid = true
+    const val = node.val
+    
+    if (val >= upper) return false
+    if (val <= lower) return false
 
-  let left = root.left
-  let right = root.right
+    if (!validate(node.left, lower, val)) return false
+    if (!validate(node.right, val, upper)) return false
 
-  if (left) {
-    while (left.right) {
-      left = left.right
-    }
-    if (left.val >= root.val) return false
-    leftValid = isValidBST(root.left)
+    return true
   }
 
-  if (right) {
-    while (right.left) {
-      right = right.left
-    }
-    if (right.val <= root.val) return false
-    rightValid = isValidBST(root.right)
-  }
-
-  return leftValid && rightValid
+  return validate(root)
 };
 // @lc code=end
 
