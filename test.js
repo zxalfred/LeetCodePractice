@@ -1,17 +1,16 @@
-var myPow = function(x, n) {
-  if (n < 0) {
-    x = 1 / x
-    n = -n
+var majorityElement = function(nums) {
+  const l = nums.length
+  const map = new Map()
+  for (let i = 0; i < l; i++) {
+    const val = nums[i]
+    const count = map.get(val) || 0
+    map.set(val, count + 1)
   }
-  pow = 1
-  while (n) {
-    if (n & 1) {
-      pow *= x
+  for (const [key, val] of map.entries()) {
+    if (val > (l / 2)){
+      return key
     }
-    x *= x
-    n >>= 1
   }
-  return pow
-}
+};
 
-myPow(3, 6)
+majorityElement([3, 2, 3])
