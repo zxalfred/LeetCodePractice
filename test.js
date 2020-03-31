@@ -1,26 +1,37 @@
-var isValidBST = function(root) {
+var solveNQueens = function(n) {
+  if (n < 1) return []
+  const result = []
+  const help = (row, col, xySum, xyDiff) => {
+    if (row >= n) {
+      result.push(col)
+      return
+    }
+    for (let i = 0; i < n; i++) {
+      if (xySum.includes(i + row) || xyDiff.includes(i - row) || col.includes(i)) {
+        continue
+      }
 
-  var validate = function(node, min, max) {
-    if (!node) return true
+      col.push(i)
+      xySum.push(i + row)
+      xyDiff.push(i - row)
+      
+      help(row + 1, col, xySum, xyDiff)
+    }
+  }
+  help(0, [], [], [])
 
-    const { val } = node
-    if (min && val <= min) return false
-    if (max && val >= max) return false
-
-    if (!validate(node.left, min, val)) return false
-    if (!validate(node.right, val, max)) return false
-
-    return true
+  // format result
+  for (let i = 0, l = result.length; i < l; i++) {
+    for (let j = 0; j < n; j++) {
+      const index = result[i][j]
+      let val = new Array(n).fill('.')
+      val[index] = 'Q'
+      val = val.join('')
+      result[i][j] = val
+    }
   }
 
-  return validate(root)
-}
+  return result
+};
 
-const tree = {
-  val: 0,
-  right: {
-    val: -1
-  }
-}
-
-console.log(isValidBST(tree))
+solveNQueens(4)
