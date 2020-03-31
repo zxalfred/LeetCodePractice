@@ -67,24 +67,21 @@
 // }
 
 // DFS
-var dfs = function(result, node, level) {
-  if (!node) return
-  if (result.length < level + 1) {
-    result.push([])
-  }
-
-  result[level].push(node.val)
-
-  dfs(result, node.left, level + 1)
-  dfs(result, node.right, level + 1)
-}
-
 var levelOrder = function(root) {
   if (!root) return []
   const result = []
-  dfs(result, root, 0)
+
+  const dfs = (node, level) => {
+    if (!node) return
+    if (result.length < level + 1) {
+      result.push([])
+    }
+    result[level].push(node.val)
+    dfs(node.left, level + 1)
+    dfs(node.right, level + 1)
+  }
+  dfs(root, 0)
   return result
 }
 
 // @lc code=end
-
