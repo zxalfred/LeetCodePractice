@@ -9,30 +9,35 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var sortArray = function(nums) {
-  const sort = (arr, left = 0, right = arr.length - 1) => {
-    if (left >= right) return
-    let i = left
-    let j = right
-    const baseVal = arr[j]
-    while (i < j) {
-      while (i < j && arr[i] <= baseVal) {
-        i++
-      }
-      arr[j] = arr[i]
-      while (i < j && arr[j] >= baseVal) {
-        j--
-      }
-      arr[i] = arr[j]
+var merge = function(left, right) {
+  const result = []
+  let i = 0
+  let j = 0
+
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result.push(left[i])
+      i++
+    } else {
+      result.push(right[j])
+      j++
     }
-    arr[i] = baseVal
-    sort(arr, left, i - 1)
-    sort(arr, i + 1, right)
   }
 
-  const arr = [...nums]
-  sort(arr)
-  return arr
-};
+  if (i === left.length) {
+    return result.concat(right.slice(j))
+  } else {
+    return result.concat(left.slice(i))
+  }
+}
+
+var sortArray = function(nums) {
+  if (nums.length < 2) return nums
+  const middle = nums.length >> 1
+  const left = nums.slice(0, middle)
+  const right = nums.slice(middle)
+
+  return merge(sortArray(left), sortArray(right))
+}
 // @lc code=end
 

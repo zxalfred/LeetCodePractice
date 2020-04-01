@@ -1,37 +1,32 @@
-var solveNQueens = function(n) {
-  if (n < 1) return []
+var merge = function(left, right) {
   const result = []
-  const help = (row, col, xySum, xyDiff) => {
-    if (row >= n) {
-      result.push(col)
-      return
-    }
-    for (let i = 0; i < n; i++) {
-      if (xySum.includes(i + row) || xyDiff.includes(i - row) || col.includes(i)) {
-        continue
-      }
+  let i = 0
+  let j = 0
 
-      col.push(i)
-      xySum.push(i + row)
-      xyDiff.push(i - row)
-      
-      help(row + 1, col, xySum, xyDiff)
-    }
-  }
-  help(0, [], [], [])
-
-  // format result
-  for (let i = 0, l = result.length; i < l; i++) {
-    for (let j = 0; j < n; j++) {
-      const index = result[i][j]
-      let val = new Array(n).fill('.')
-      val[index] = 'Q'
-      val = val.join('')
-      result[i][j] = val
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result.push(left[i])
+      i++
+    } else {
+      result.push(right[j])
+      j++
     }
   }
 
-  return result
-};
+  if (i === left.length) {
+    return result.concat(right.slice(j))
+  } else {
+    return result.concat(left.slice(i))
+  }
+}
 
-solveNQueens(4)
+var mergeSort = function(nums) {
+  if (nums.length < 2) return nums
+  const middle = nums.length >> 1
+  const left = nums.slice(0, middle)
+  const right = nums.slice(middle)
+
+  return merge(mergeSort(left), mergeSort(right))
+}
+
+console.log(mergeSort([4,234,1,2,9,10,3]))
