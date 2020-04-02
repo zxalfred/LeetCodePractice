@@ -1,4 +1,16 @@
+/*
+ * @lc app=leetcode.cn id=69 lang=javascript
+ *
+ * [69] x 的平方根
+ */
+
+// @lc code=start
+/**
+ * @param {number} x
+ * @return {number}
+ */
 var mySqrt = function(x) {
+  if (x === 0) return 0
   if (x <= 3) return 1
   const help = function(target, left, right) {
     if (left - right <= 1) {
@@ -17,5 +29,5 @@ var mySqrt = function(x) {
 
   return help(x, x >> 1, 1)
 };
+// @lc code=end
 
-console.log(mySqrt(5))
