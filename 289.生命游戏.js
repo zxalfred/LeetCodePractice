@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=289 lang=javascript
+ *
+ * [289] 生命游戏
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} board
+ * @return {void} Do not return anything, modify board in-place instead.
+ */
 var isAlive = function (board, i, j) {
   let aliveNeibor = 0
   let val = board[i][j]
@@ -46,5 +57,5 @@ var gameOfLife = function(board) {
 
   help(board, 0, 0)
 };
+// @lc code=end
 
-gameOfLife([[0,1,0],[0,0,1],[1,1,1],[0,0,0]])
