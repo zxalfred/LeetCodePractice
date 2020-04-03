@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=8 lang=javascript
+ *
+ * [8] 字符串转换整数 (atoi)
+ */
+
+// @lc code=start
+/**
+ * @param {string} str
+ * @return {number}
+ */
 var myAtoi = function(str) {
   const maxVal = 2147483647
   const minVal = -2147483648
@@ -7,7 +18,7 @@ var myAtoi = function(str) {
 
   for (let i = 0; i < str.length; i++) {
     const val = str[i]
-    if (val === '-' || val === '+'
+    if ((val === '-' || val === '+')
       && !resultArr.length
       && !signalFlag
     ) {
@@ -33,5 +44,5 @@ var myAtoi = function(str) {
   result = result < minVal ? minVal : result
   return result
 };
+// @lc code=end
 
-myAtoi('+-2')
