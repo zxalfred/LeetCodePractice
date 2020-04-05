@@ -1,59 +1,42 @@
-class Trie {
-  constructor (){
-    this.root = {}
-    this.isEnd = false
-  }
-
-  insert(word) {
-    let node = this.root
-    for (let i = 0; i < word.length; i++) {
-      if (!node[word[i]]) node[word[i]] = {}
-      node = node[word[i]]
-    }
-    node.isEnd = true
-  }
-}
-
-var findWords = function(board, words) {
-  if (!words.length || !board.length || !board[0].length) return []
-
-  const result = new Set()
-  const trie = new Trie()
-  for (let word of words) trie.insert(word)
-
-  const dfs = (board, node, word, row, col, result) => {
-    const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
-    if (node.isEnd) {
-      result.add(word)
-    }
-    const temp = board[row][col]
-    board[row][col] = ''
-    for (const diff of xyDiff) {
-      const nextRow = row + diff[0]
-      const nextCol = col + diff[1]
-      if (nextRow >=0 && nextRow < board.length
-        && nextCol >=0 && nextCol < board[0].length
-      ) {
-        const nextVal = board[nextRow][nextCol]
-        if ( nextVal !== '' && node[nextVal]) {
-          dfs(board, node[nextVal], word + nextVal, nextRow, nextCol, result)
-        }
-      }
-    }
-    board[row][col] = temp
-  }
+var solveNQueens = function(n) {
+  if (n < 1) return []
+  const res = []
   
-  for (let row = 0; row < board.length; row++) {
-    for (let col = 0; col < board[0].length; col++) {
-      const letter = board[row][col]
-      if (trie.root[letter]) {
-        dfs(board, trie.root[letter], letter, row, col, result)
-      }
+  const dfs = (row, col, ltr, rtl, sum) => {
+    if (row === n) {
+      res.push([...sum])
+      return
+    }
+
+    let bits = (~(col|ltr|rtl))&((1<<n)-1)
+    while(bits > 0) {
+      const val = bits&(-bits)
+      sum.push(val)
+      dfs(row + 1, col|val, (ltr|val)>>1, (rtl|val)<<1, sum)
+      sum.pop()
+      bits = bits&(bits-1)
     }
   }
 
-  return [...result]
+  dfs(0, 0, 0, 0, [])
+
+  // format result
+  for (let i = 0, l = res.length; i < l; i++) {
+    for (let j = 0; j < n; j++) {
+      let val = res[i][j]
+      let index = -1
+      while (val) {
+        val = val>>1
+        index++
+      }
+      let x = new Array(n).fill('.')
+      x[index] = 'Q'
+      x = x.join('')
+      res[i][j] = x
+    }
+  }
+
+  return res
 };
 
-
-console.log(findWords([["a","b"],["a","a"]],["aba","baa","bab","aaab","aaa","aaaa","aaba"]))
+console.log(solveNQueens(4))

@@ -11,33 +11,42 @@
  */
 var solveNQueens = function(n) {
   if (n < 1) return []
-  const result = []
-  const help = (row, col, xySum, xyDiff) => {
-    if (row >= n) {
-      result.push(col)
+  const res = []
+  
+  const dfs = (row, col, ltr, rtl, sum) => {
+    if (row === n) {
+      res.push([...sum])
       return
     }
-    for (let i = 0; i < n; i++) {
-      if (xySum.includes(i + row) || xyDiff.includes(i - row) || col.includes(i)) {
-        continue
-      }
-      
-      help(row + 1, col.concat(i), xySum.concat(i + row), xyDiff.concat(i - row))
+
+    let bits = (~(col|ltr|rtl))&((1<<n)-1)
+    while(bits > 0) {
+      const val = bits&(-bits)
+      sum.push(val)
+      dfs(row + 1, col|val, (ltr|val)>>1, (rtl|val)<<1, sum)
+      sum.pop()
+      bits = bits&(bits-1)
     }
   }
-  help(0, [], [], [])
+
+  dfs(0, 0, 0, 0, [])
 
   // format result
-  for (let i = 0, l = result.length; i < l; i++) {
+  for (let i = 0, l = res.length; i < l; i++) {
     for (let j = 0; j < n; j++) {
-      const index = result[i][j]
-      let val = new Array(n).fill('.')
-      val[index] = 'Q'
-      val = val.join('')
-      result[i][j] = val
+      let val = res[i][j]
+      let index = -1
+      while (val) {
+        val = val>>1
+        index++
+      }
+      let x = new Array(n).fill('.')
+      x[index] = 'Q'
+      x = x.join('')
+      res[i][j] = x
     }
   }
 
-  return result
+  return res
 };
 // @lc code=end
