@@ -7,7 +7,7 @@ const rotateColums = function(matrix) {
   for (let j = 0; j < matrix.length; j++) {
     let floor = 0;
     let ceil = matrix.length - 1;
-    while(low < ceil) {
+    while(floor < ceil) {
       swap(matrix, low, j, ceil, j);
       low++;
       ceil--;
