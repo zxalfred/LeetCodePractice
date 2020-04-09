@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=120 lang=javascript
+ *
+ * [120] 三角形最小路径和
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} triangle
+ * @return {number}
+ */
 var minimumTotal = function(triangle) {
   if (triangle.length === 1) return triangle[0][0]
   for (let i = triangle.length - 2; i >= 0; i--) {
@@ -8,10 +19,4 @@ var minimumTotal = function(triangle) {
 
   return triangle[0][0]
 };
-
-minimumTotal([
-  [2],
- [3,4],
-[6,5,7],
-[4,1,8,3]
-])
+// @lc code=end
