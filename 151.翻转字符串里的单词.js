@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=151 lang=javascript
+ *
+ * [151] 翻转字符串里的单词
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var reverseWords = function(s) {
   s = s.trim()
   if (!s.length) return ''
@@ -19,5 +30,5 @@ var reverseWords = function(s) {
 
   return result.join(' ')
 };
+// @lc code=end
 
-reverseWords("the sky is blue")
