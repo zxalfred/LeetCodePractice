@@ -1,17 +1,22 @@
-var minimumTotal = function(triangle) {
-  if (triangle.length === 1) return triangle[0][0]
-  for (let i = triangle.length - 2; i >= 0; i--) {
-    for (let j = 0; j <= i; j++) {
-      triangle[i][j] = Math.min(triangle[i + 1][j], triangle[i + 1][j + 1]) + triangle[i][j]
+var rob = function(nums) {
+  if (nums.length === 1) return nums[0]
+  let result = nums[0]
+  let flag = true
+  for (let i = 1; i < nums.length; i++) {
+    if (flag) {
+      const temp = result - nums[i - 1] + nums[i] + (nums[i - 2] ? nums[i - 2] : 0)
+      if (temp > result) {
+        result = temp
+        flag = true
+      } else {
+        flag = false
+      }
+    } else {
+      result += nums[i]
+      flag = true
     }
   }
-
-  return triangle[0][0]
+  return result
 };
 
-minimumTotal([
-  [2],
- [3,4],
-[6,5,7],
-[4,1,8,3]
-])
+rob([2,7,9,3,1])
