@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=3 lang=javascript
+ *
+ * [3] 无重复字符的最长子串
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var lengthOfLongestSubstring = function(s) {
   if (s.length < 2) return s.length
   
@@ -28,5 +39,5 @@ var lengthOfLongestSubstring = function(s) {
 
   return maxLength
 };
+// @lc code=end
 
-lengthOfLongestSubstring("bbbbb")
