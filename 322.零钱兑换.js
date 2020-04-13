@@ -1,5 +1,18 @@
+/*
+ * @lc app=leetcode.cn id=322 lang=javascript
+ *
+ * [322] 零钱兑换
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
 var coinChange = function(coins, amount) {
-  if (amount === 0 || coins.length === 0) return -1 
+  if (amount === 0) return 0
+  if (coins.length === 0) return -1 
   const dp = new Array(amount + 1)
   dp.fill(Infinity)
   dp[0] = 0
@@ -15,5 +28,5 @@ var coinChange = function(coins, amount) {
 
   return dp[amount] === Infinity ? -1 : dp[amount]
 };
+// @lc code=end
 
-coinChange([2,4,5], 13)
