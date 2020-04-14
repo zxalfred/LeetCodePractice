@@ -1,3 +1,22 @@
+/*
+ * @lc app=leetcode.cn id=445 lang=javascript
+ *
+ * [445] 两数相加 II
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 var addTwoNumbers = function(l1, l2) {
   const stack1 = []
   const stack2 = []
@@ -26,7 +45,7 @@ var addTwoNumbers = function(l1, l2) {
 
   while (resultStack.length) {
     const val = resultStack.pop()
-    if (head) {
+    if (!head) {
       head = new ListNode(val)
       current = head
     } else {
@@ -37,30 +56,5 @@ var addTwoNumbers = function(l1, l2) {
 
   return head
 };
+// @lc code=end
 
-const l1 = {
-  val: 7,
-  next: {
-    val: 2,
-    next: {
-      val: 4,
-      next: {
-        val: 3,
-        next: null
-      }
-    }
-  }
-}
-
-const l2 = {
-  val: 5,
-  next: {
-    val: 6,
-    next: {
-      val: 4,
-      next: null
-    }
-  }
-}
-
-addTwoNumbers(l1, l2)
