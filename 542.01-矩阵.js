@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=542 lang=javascript
+ *
+ * [542] 01 矩阵
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} matrix
+ * @return {number[][]}
+ */
 var updateMatrix = function(matrix) {
   const rowLen = matrix.length
   const colLen = matrix[0].length
@@ -14,7 +25,7 @@ var updateMatrix = function(matrix) {
       const levelSize = queue.length
 
       for (let n = 0; n < levelSize; n++) {
-        const u = queue[n]
+        const u = queue.shift()
         const i = u[0]
         const j = u[1]
         if (matrix[i][j] === 0) return count
@@ -44,5 +55,5 @@ var updateMatrix = function(matrix) {
 
   return result
 };
+// @lc code=end
 
-updateMatrix([[1,0,1,1,0,0,1,0,0,1],[0,1,1,0,1,0,1,0,1,1],[0,0,1,0,1,0,0,1,0,0],[1,0,1,0,1,1,1,1,1,1],[0,1,0,1,1,0,0,0,0,1],[0,0,1,0,1,1,1,0,1,0],[0,1,0,1,0,1,0,0,1,1],[1,0,0,0,1,1,1,1,0,1],[1,1,1,1,1,1,1,0,1,0],[1,1,1,1,0,1,0,0,1,1]])
