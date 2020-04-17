@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=45 lang=javascript
+ *
+ * [45] 跳跃游戏 II
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var jump = function(nums) {
   let canJumpMax = 0
   let lastCanJumpMax = 0
@@ -15,5 +26,5 @@ var jump = function(nums) {
   }
   return step
 };
+// @lc code=end
 
-jump([1,2,3])
