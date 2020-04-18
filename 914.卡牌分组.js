@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=914 lang=javascript
+ *
+ * [914] 卡牌分组
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} deck
+ * @return {boolean}
+ */
 const gcd = (a, b) => {
   if (b === 0) return a
   return gcd(b, a % b)
@@ -21,5 +32,5 @@ var hasGroupsSizeX = function(deck) {
 
   return val > 1
 };
+// @lc code=end
 
-hasGroupsSizeX([1,2,3,4,4,3,2,1])
