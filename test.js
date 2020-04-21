@@ -1,59 +1,19 @@
-var orangesRotting = function(grid) {
-  const rowLen = grid.length
-  const colLen = grid[0].length
-  const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
-  const queue = []
-  let count = -1
-  let hasOrange = false
+var numberOfSubarrays = function(nums, k) {
+  const l = nums.length
+  let result = 0
+  const odd = []
+  let cur = 0
+  for (let i = 0; i < l; i++) {
+    if (nums[i] & 1) odd[++cur] = i
+  }
+  odd[0] = -1
+  odd[++cur] = l
 
-  const bfs = (queue) => {
-    while (queue.length) {
-      const nowSize = queue.length
-      count++
-      for (let n = 0; n < nowSize; n++) {
-        const u = queue.shift()
-        const i = u[0]
-        const j = u[1]
-        grid[i][j] = 0
-        for (const item of xyDiff) {
-          const x = i + item[0]
-          const y = j + item[1]
-          if (
-            x >= 0 && x < rowLen
-            && y >=0 && y < colLen
-            && grid[x][y] === 1
-          ) {
-            queue.push([x, y])
-            grid[x][y] = 0
-          }
-        }
-      }
-    }
+  for (let i = 1; i + k <= cur; ++i) {
+    result += (odd[i] - odd[i - 1]) * (odd[i + k] - odd[i + k - 1])
   }
 
-  for (let i = 0; i < rowLen; i++) {
-    for (let j = 0; j < colLen; j++) {
-      if (grid[i][j] === 2) {
-        queue.push([i, j])
-      } else if (grid[i][j] === 1) {
-        hasOrange = true
-      }
-    }
-  }
-  if (!queue.length) {
-    return hasOrange ? -1 : 0
-  }
-  bfs(queue)
-
-  for (let i = 0; i < rowLen; i++) {
-    for (let j = 0; j < colLen; j++) {
-      if (grid[i][j] === 1) {
-        return -1
-      }
-    }
-  }
-
-  return count
+  return result
 };
 
-orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
+console.log(numberOfSubarrays([0,0,1,0,1,0,0,0], 2))
