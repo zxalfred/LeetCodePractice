@@ -1,29 +1,30 @@
-var canThreePartsEqualSum = function(A) {
-  const target = A.reduce((a, b) => a + b) / 3
-  if (target % 1) return false
-  const l = A.length
-  let i = 0
-  let sum = 0
-  while (i < l) {
-    sum += A[i]
-    if (sum === target) {
-      break
-    }
-    i++
-  }
-  sum = 0
-  if (i >= l) return false
-  i++
-  while (i < l) {
-    sum += A[i]
-    if (sum === target) {
-      break
-    }
-    i++
-  }
-  if (i >= l - 1) return false
+const gcd = (a, b) => {
+  if (b === 0) return a
+  return gcd(b, a % b)
+}
 
-  return true
+var gcdOfStrings = function(str1, str2) {
+  const l1 = str1.length
+  const l2 = str2.length
+
+  const a = gcd(l1, l2)
+  let slice = ''
+
+  for (let i = 0; i < l1; i += a){
+    if (!slice) {
+      slice = str1.substr(i, a)
+    } else if (str1.substr(i, a) !== slice) {
+      return ''
+    }
+  }
+
+  for (let i = 0; i < l2; i += a){
+    if (str2.substr(i, a) !== slice) {
+      return ''
+    }
+  }
+
+  return slice
 };
 
-console.log(canThreePartsEqualSum([1,-1,1,-1]))
+console.log(gcdOfStrings("LEET", "CODE"))
