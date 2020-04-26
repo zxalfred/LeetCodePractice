@@ -1,30 +1,24 @@
-const gcd = (a, b) => {
-  if (b === 0) return a
-  return gcd(b, a % b)
+var mergeKLists = (lists) => {
+  const len = lists.length
+  if (len === 0) return null
+
+  const mergeTwoList = (l1, l2) => {
+    if (l1 === null) return l2
+    if (l2 === null) return l1
+    if (l1.val <= l2.val) {
+      l1.next = mergeTwoList(l1.next, l2)
+      return l1
+    } else {
+      l2.next = mergeTwoList(l1, l2.next)
+      return l2
+    }
+  }
+
+  const merge = (left, right) => {
+    if (left === right) return lists[left]
+    const mid = left + ((right - left) >> 1)
+    return mergeTwoList(merge(left, mid), merge(mid + 1, right))
+  }
+
+  return merge(0, len - 1)
 }
-
-var gcdOfStrings = function(str1, str2) {
-  const l1 = str1.length
-  const l2 = str2.length
-
-  const a = gcd(l1, l2)
-  let slice = ''
-
-  for (let i = 0; i < l1; i += a){
-    if (!slice) {
-      slice = str1.substr(i, a)
-    } else if (str1.substr(i, a) !== slice) {
-      return ''
-    }
-  }
-
-  for (let i = 0; i < l2; i += a){
-    if (str2.substr(i, a) !== slice) {
-      return ''
-    }
-  }
-
-  return slice
-};
-
-console.log(gcdOfStrings("LEET", "CODE"))
