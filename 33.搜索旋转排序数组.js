@@ -11,33 +11,29 @@
  * @return {number}
  */
 var search = function(nums, target) {
-  const split = (i, j) => {
-    if (i >= j) {
-      return nums[i] === target ? i : -1
-    }
-    const mid = i + ((j - i) >> 1)
-    const left = nums[i]
-    const right = nums[j]
-    const middle = nums[mid]
-    if (target === middle)  return mid
-    if (left < middle) {
-      if (target === left) return i
-      if (target < middle && target > left)  {
-        return split(i, mid - 1)
+  let left = 0
+  let right = nums.length - 1
+
+  while (left <= right) {
+    const mid = left + ((right - left) >> 1)
+    if (nums[mid] === target) return mid
+
+    if (nums[mid] >= nums[left]) {
+      if (nums[mid] >= target && target >= nums[left]) {
+        right = mid - 1
       } else {
-        return split(mid + 1, j)
+        left = mid + 1
       }
     } else {
-      if (target === right) return j
-      if (target > middle && target < right) {
-        return split(mid + 1, j)
+      if (nums[mid] <= target && target <= nums[right]) {
+        left = mid + 1
       } else {
-        return split(i, mid - 1)
+        right = mid - 1
       }
     }
   }
 
-  return split(0, nums.length - 1)
+  return -1
 };
 // @lc code=end
 
