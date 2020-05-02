@@ -12,10 +12,10 @@
 var threeSum = function(nums) {
   const result = []
   nums.sort((a, b) => a - b)
-  
-  while (nums.length >= 3) {
-    const target = -nums.shift()
-    let head = 0
+  let targetIndex = 0
+  while (targetIndex < nums.length - 1) {
+    const target = -nums[targetIndex]
+    let head = targetIndex + 1
     let tail = nums.length - 1
     while (head < tail) {
       const sum = nums[head] + nums[tail]
@@ -23,9 +23,11 @@ var threeSum = function(nums) {
         const a = nums[head]
         const b = nums[tail]
         result.push([-target, a, b])
+        // 剔除左边重复项
         while (nums[head] === a) {
           head++
         }
+        // 剔除右边重复项
         while (nums[tail] === b) {
           tail--
         }
@@ -35,8 +37,9 @@ var threeSum = function(nums) {
         head++
       }
     }
-    while (nums[0] === -target) {
-      nums.shift()
+    // 剔除头部重复项
+    while (nums[targetIndex] === -target) {
+      targetIndex++
     }
   }
 
