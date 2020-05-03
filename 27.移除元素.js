@@ -1,3 +1,15 @@
+/*
+ * @lc app=leetcode.cn id=27 lang=javascript
+ *
+ * [27] 移除元素
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
 var removeElement = function(nums, val) {
   let i = 0
   let j = 0
@@ -13,5 +25,5 @@ var removeElement = function(nums, val) {
   }
   return i
 };
+// @lc code=end
 
-removeElement([0,1,2,2,3,0,4,2], 2)
