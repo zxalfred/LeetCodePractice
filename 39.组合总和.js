@@ -15,11 +15,12 @@ var combinationSum = function(candidates, target) {
   const backtracking = (arr, sum) => {
     if (sum === target) {
       result.push(arr)
-      return true
+      return
     }
-    if (sum > target) return false
+    if (sum > target) return
     for (const item of candidates) {
-      // backtracking(condi)
+      if (!arr.length || item >= arr[arr.length - 1])
+      backtracking(arr.concat(item), sum + item)
     }
   }
 
