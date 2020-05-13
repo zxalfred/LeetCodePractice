@@ -12,15 +12,13 @@
  */
 var searchRange = function(nums, target) {
   const help = (left, right) => {
-    if (left === right) return nums[left] === target ? left : -1
+    if (left > right) return -1
     const mid = left + ((right - left) >> 1)
     if (nums[mid] === target) return mid
     if (nums[mid] > target) {
-      if (nums[left] === target) return left
-      return help(left, mid)
+      return help(left, mid - 1)
     } else{
-      if (mid === left) return nums[right] === target ? right : -1
-      return help(mid, right)
+      return help(mid + 1, right)
     }
   }
 
