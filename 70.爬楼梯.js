@@ -11,13 +11,14 @@
  */
 var climbStairs = function(n) {
   if (n <= 2) return n
-  const memo = [0, 1, 2]
-
-  for (let i = 3; i <= n; i++) {
-    memo[i] = memo[i - 1] + memo[i - 2]
+  let i = 1 
+  let j = 2
+  while (n > 2) {
+    [i, j] = [j, i + j]
+    n--
   }
-
-  return memo[n]
+  return j
 };
+
 // @lc code=end
 
