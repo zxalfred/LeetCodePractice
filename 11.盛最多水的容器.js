@@ -15,13 +15,14 @@ var maxArea = function(height) {
   let result = 0
 
   while (i < j) {
-    const leftHeight = height[i]
-    const rightHeight = height[j]
-    if (leftHeight < rightHeight) {
-      result = Math.max(result, (j - i) * leftHeight)
+    const leftH = height[i]
+    const rightH = height[j]
+
+    if (leftH < rightH) {
+      result = Math.max(result, leftH * (j - i))
       i++
     } else {
-      result = Math.max(result, (j - i) * rightHeight)
+      result = Math.max(result, rightH * (j - i))
       j--
     }
   }
