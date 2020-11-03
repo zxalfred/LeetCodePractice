@@ -1,6 +1,17 @@
+/*
+ * @lc app=leetcode.cn id=941 lang=javascript
+ *
+ * [941] 有效的山脉数组
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} A
+ * @return {boolean}
+ */
 var validMountainArray = function(A) {
   const l = A.length
-  if (l < 2) return true
+  if (l < 2) return false
 
   let flag = 1
 
@@ -19,5 +30,5 @@ var validMountainArray = function(A) {
   }
   return flag < 0
 };
+// @lc code=end
 
-console.log(validMountainArray([0,3,2,1]))
