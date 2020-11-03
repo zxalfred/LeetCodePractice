@@ -10,41 +10,40 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-  const result = []
+  const l = nums.length
+  if (l < 3) return []
   nums.sort((a, b) => a - b)
-  let targetIndex = 0
-  while (targetIndex < nums.length - 1) {
-    const target = -nums[targetIndex]
-    let head = targetIndex + 1
-    let tail = nums.length - 1
-    while (head < tail) {
-      const sum = nums[head] + nums[tail]
-      if (sum === target) {
-        const a = nums[head]
-        const b = nums[tail]
-        result.push([-target, a, b])
-        // 剔除左边重复项
-        while (nums[head] === a) {
-          head++
-        }
-        // 剔除右边重复项
-        while (nums[tail] === b) {
-          tail--
-        }
-      } else if (sum > target) {
-        tail--
+  const result = []
+  for(let k = 0; k < l - 2;) {
+    let i = k + 1
+    let j = l - 1
+    const base = nums[k]
+    while (i < j) {
+      const leftVal = nums[i]
+      const rightVal = nums[j]
+      const sum = leftVal + rightVal + base
+      if (sum > 0) {
+        j--
+      } else if (sum < 0) {
+        i++
       } else {
-        head++
+        result.push([nums[k], nums[i], nums[j]])
+        while (nums[i] === leftVal) {
+          i++
+        }
+        while (nums[j] === rightVal) {
+          j--
+        }
       }
     }
-    // 剔除头部重复项
-    while (nums[targetIndex] === -target) {
-      targetIndex++
+    
+    while (base === nums[k]) {
+      k++
     }
   }
 
   return result
-};
+}
 
 // @lc code=end
 
