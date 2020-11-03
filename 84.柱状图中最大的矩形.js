@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=84 lang=javascript
+ *
+ * [84] 柱状图中最大的矩形
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} heights
+ * @return {number}
+ */
 var largestRectangleArea = function(heights) {
   const l = heights.length
   const stack = [0]
@@ -22,4 +33,5 @@ var largestRectangleArea = function(heights) {
   return result
 };
 
-console.log(largestRectangleArea([2,1,5,6,2,3]))
+// @lc code=end
+
