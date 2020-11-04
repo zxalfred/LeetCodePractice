@@ -1,3 +1,15 @@
+/*
+ * @lc app=leetcode.cn id=57 lang=javascript
+ *
+ * [57] 插入区间
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} intervals
+ * @param {number[]} newInterval
+ * @return {number[][]}
+ */
 var insert = function(intervals, newInterval) {
   if (!intervals.length) return [newInterval]
   const result = []
@@ -12,8 +24,6 @@ var insert = function(intervals, newInterval) {
       } else if (newInterval[1] <= now[1]) {
         result.push([newInterval[0], now[1]])
         break
-      } else {
-        
       }
     } else if (newInterval[0] <= now[1]) {
       newInterval[0] = now[0]
@@ -39,4 +49,6 @@ var insert = function(intervals, newInterval) {
   return result
 };
 
-console.log(insert([[1,5]],[0,5]))
+
+// @lc code=end
+
