@@ -13,39 +13,42 @@
  */
 var ladderLength = function(beginWord, endWord, wordList) {
   if (!endWord || !wordList.includes(endWord)) return 0
-
-  const comboDicts = new Map()
-  const len = beginWord.length
+  const map = new Map()
+  const { length: len } = beginWord
 
   for (let i = 0; i < wordList.length; i++) {
     for (let j = 0; j < len; j++) {
-      const adjacentWord = `${wordList[i].substring(0, j)}*${wordList[i].substring(j + 1, len)}`
-      !comboDicts.has(adjacentWord) && comboDicts.set(adjacentWord, [])
-      comboDicts.get(adjacentWord).push(wordList[i])
+      const word = wordList[i]
+      const key = `${word.substring(0,j)}*${word.substring(j + 1, len)}`
+      !map.has(key) && map.set(key, [])
+      map.get(key).push(word)
     }
   }
 
   const queue = [[beginWord, 1]]
-  const visited = { beginWord: true }
-
+  const memo = {beginWord: true}
+  
   while (queue.length) {
     const currNode = queue.shift()
     const [currWord, currLevel] = currNode
     for (let i = 0; i < len; i++) {
-      const adjacentWord = `${currWord.substring(0, i)}*${currWord.substring(i + 1,len)}`
-      if (comboDicts.has(adjacentWord)) {
-        const tmpWords = comboDicts.get(adjacentWord)
-        for (let j = 0; j < tmpWords.length; j++) {
-          if (tmpWords[j] === endWord) return currLevel + 1
-          if (!visited[tmpWords[j]]) {
-            visited[tmpWords[j]] = true
-            queue.push([tmpWords[j], currLevel + 1])
+      const key = `${currWord.substring(0,i)}*${currWord.substring(i + 1, len)}`
+      if (map.has(key)) {
+        const words = map.get(key)
+        for (let j = 0; j < words.length; j++) {
+          const word = words[j]
+          if (word === endWord) return currLevel + 1
+          if (!memo[word]) {
+            memo[word] = true
+            queue.push([word, currLevel + 1])
           }
         }
       }
     }
   }
+
   return 0
 }
+
 // @lc code=end
 
