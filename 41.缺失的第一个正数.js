@@ -1,3 +1,14 @@
+/*
+ * @lc app=leetcode.cn id=41 lang=javascript
+ *
+ * [41] 缺失的第一个正数
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var firstMissingPositive = function(nums) {
   const { length: l } = nums
   for (let i = 0; i < l; i++) {
@@ -17,5 +28,5 @@ var firstMissingPositive = function(nums) {
   }
   return l + 1
 };
+// @lc code=end
 
-console.log(firstMissingPositive([1,1]))
