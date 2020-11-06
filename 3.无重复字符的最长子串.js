@@ -44,19 +44,23 @@
 // 利用 map 记下字符出现的位置
 // 若新字符存在，直接移动左边界到需要的地方，而不是一次次移动
 // // 时间复杂度 O(n)
-var lengthOfLongestSubstring = function(s) {
+const lengthOfLongestSubstring = function(s) {
   let result = 0
-  const l = s.length
   const map = new Map()
+  const { length: l } = s
 
   for (let i = 0, j = 0; j < l; j++) {
-    if (map.has(s[j])) {
-      i = Math.max(i, map.get(s[j]) + 1)
+    const val = s[j]
+    const index = map.get(val)
+    if (index === undefined || index < i) {
+      result = Math.max(result, j - i + 1)
+    } else {
+      i = index + 1
     }
-    result = Math.max(result, j - i + 1)
-    map.set(s[j], j)
+    map.set(val, j)
   }
 
+  
   return result
 }
 // @lc code=end
