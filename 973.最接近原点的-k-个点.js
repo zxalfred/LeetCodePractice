@@ -19,11 +19,11 @@ var kClosest = function(points, K) {
     let distanceA = map.get(keyA)
     let distanceB = map.get(keyB)
     if (!distanceA) {
-      distanceA = Math.sqrt(a[0] ** 2 + a[1] ** 2)
+      distanceA = a[0] ** 2 + a[1] ** 2
       map.set(keyA, distanceA)
     }
     if (!distanceB) {
-      distanceB = Math.sqrt(b[0] ** 2 + b[1] ** 2)
+      distanceB = b[0] ** 2 + b[1] ** 2
       map.set(keyB, distanceB)
     }
     return distanceA - distanceB
