@@ -1,40 +1,30 @@
-var mergeSort = (nums) => {
-
-  const merge = (arr1, arr2) => {
-    const result = []
-    const l1 = arr1.length
-    const l2 = arr2.length
-    let i = 0
-    let j = 0
-    while (i < l1 && j < l2) {
-      if (arr1[i] <= arr2[j]) {
-        result.push(arr1[i])
-        i++
-      } else {
-        result.push(arr2[j])
-        j++
-      }
-    }
-    while (i < l1) {
-      result.push(arr1[i])
-      i++
-    }
-    while (j < l2) {
-      result.push(arr2[j])
-      j++
-    }
-    return result
+const reverse = (nums, index) => {
+  const l = nums.length
+  if (index >= l - 1) return nums
+  let left = index
+  let right = l - 1
+  while (left < right) {
+    [nums[left], nums[right]] = [nums[right], nums[left]]
+    left++
+    right--
   }
-
-  const split = (arr) => {
-    if (arr.length < 2) return arr
-    const mid = arr.length >> 1
-    const arr1 = arr.slice(0, mid)
-    const arr2 = arr.slice(mid + 1)
-    return merge(split(arr1), split(arr2))
-  }
-
-  return split(nums)
 }
 
-console.log(mergeSort([245,123,64,999,-1,-123,124]))
+var nextPermutation = function(nums) {
+  const l = nums.length
+  if (l < 2) return nums
+  let i = l - 2
+  while (i >= 0) {
+    for (let j = l - 1; j > i; j--) {
+      if (nums[j] > nums[i]) {
+        [nums[i], nums[j]] = [nums[j], nums[i]]
+        reverse(nums, i + 1)
+        return nums
+      }
+    }
+    i--
+  }
+
+  reverse(nums, 0)
+  return nums
+}

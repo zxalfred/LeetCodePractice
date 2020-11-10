@@ -9,37 +9,35 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var swap = function(arr, a, b) {
-  const temp = arr[a]
-  arr[a] = arr[b]
-  arr[b] = temp
-}
-var reverse = function(nums, start) {
-  let i = start
-  let j = nums.length - 1
-
-  while (i < j) {
-    swap(nums, i, j)
-    i++
-    j--
+const reverse = (nums, index) => {
+  const l = nums.length
+  if (index >= l - 1) return nums
+  let left = index
+  let right = l - 1
+  while (left < right) {
+    [nums[left], nums[right]] = [nums[right], nums[left]]
+    left++
+    right--
   }
 }
+
 var nextPermutation = function(nums) {
-  const len = nums.length
-  if (len < 2) return nums
-  let i = len - 2
-  while (i >= 0 && nums[i + 1] <= nums[i]) {
+  const l = nums.length
+  if (l < 2) return nums
+  let i = l - 2
+  while (i >= 0) {
+    for (let j = l - 1; j > i; j--) {
+      if (nums[j] > nums[i]) {
+        [nums[i], nums[j]] = [nums[j], nums[i]]
+        reverse(nums, i + 1)
+        return nums
+      }
+    }
     i--
   }
-  if (i >= 0) {
-    let j = len - 1
-    while (j >= 0 && nums[j] <= nums[i]) {
-      j--
-    }
-    swap(nums, i, j)
-  }
 
-  reverse(nums, i + 1)
+  reverse(nums, 0)
+  return nums
 }
 // @lc code=end
 
