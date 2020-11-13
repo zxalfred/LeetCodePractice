@@ -40,6 +40,5 @@ var multiply = function(num1, num2) {
   return ans.join('').toString()
 };
 
-console.log(multiply('123','456'))
 // @lc code=end
 
