@@ -1,30 +1,31 @@
-const reverse = (nums, index) => {
-  const l = nums.length
-  if (index >= l - 1) return nums
-  let left = index
-  let right = l - 1
-  while (left < right) {
-    [nums[left], nums[right]] = [nums[right], nums[left]]
-    left++
-    right--
-  }
+function ListNode(val) {
+  this.val = val
+  this.next = null
 }
 
-var nextPermutation = function(nums) {
-  const l = nums.length
-  if (l < 2) return nums
-  let i = l - 2
-  while (i >= 0) {
-    for (let j = l - 1; j > i; j--) {
-      if (nums[j] > nums[i]) {
-        [nums[i], nums[j]] = [nums[j], nums[i]]
-        reverse(nums, i + 1)
-        return nums
+var insertionSortList = function(head) {
+  if (!head || !head.next) return head
+  const start = new ListNode(-Infinity)
+  start.next = head
+  let beforeCur = head
+
+  while (beforeCur.next) {
+    let pre = start
+    const nextBeforeCur = beforeCur.next
+    while (pre.next !== beforeCur.next) {
+      if (pre.next.val <= beforeCur.next.val) {
+        pre = pre.next
+      } else {
+        const cur = beforeCur.next
+        beforeCur.next = beforeCur.next.next
+        cur.next = pre.next
+        pre.next = cur
+        break
       }
     }
-    i--
+    beforeCur = nextBeforeCur
   }
+  return start.next
+};
+console.log(insertionSortList({val:5000, next: {val: 4999, next: {val:4998, next: {val: 4997, next: null}}}}))
 
-  reverse(nums, 0)
-  return nums
-}
