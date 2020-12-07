@@ -10,34 +10,58 @@
  * @param {number} k
  * @return {string}
  */
+// 回溯
+// var getPermutation = function(n, k) {
+//   let count = 0
+//   let result = ''
+//   const memo = []
+//   // memo[index] is true when used
+//   const backTrack = (str) => {
+//     if (str.length === n) {
+//       count++
+//       if (count === k) {
+//         result = str
+//       }
+//       return
+//     }
+
+//     for (let i = 0; i < n; i++) {
+//       if (memo[i] !== true) {
+//         memo[i] = true
+//         backTrack(`${str}${i + 1}`)
+//         if (result) return
+//         memo[i] = false
+//       }
+//     }
+//   }
+
+//   backTrack('')
+
+//   return result
+// };
+
+// 数学/找规律
 var getPermutation = function(n, k) {
-  let count = 0
+  const nums = []
   let result = ''
+  let factorial = 1
 
-  // memo[index] is true when used
-  const backTrack = (str, memo) => {
-    if (str.length === n) {
-      count++
-      if (count === k) {
-        result = str
-      }
-      return
-    }
-
-    for (let i = 0; i < n; i++) {
-      if (memo[i] !== true) {
-        memo[i] = true
-        backTrack(`${str}${i + 1}`, memo)
-        if (result) return
-        memo[i] = false
-      }
-    }
+  for (let i = 1; i <= n; i++) {
+    nums.push(i)
+    factorial *= i
   }
 
-  backTrack('', [])
+  k--
+  while (result.length !== n) {
+    factorial /= nums.length
+    const index = k / factorial | 0
+    result += nums[index]
+    nums.splice(index, 1)
+    k = k % factorial
+  }
 
   return result
-};
+}
 
 // @lc code=end
 
