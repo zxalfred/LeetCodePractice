@@ -11,15 +11,16 @@
  * @return {number}
  */
 var maxProfit = function(prices, fee) {
-  const dp = new Array(prices.length).fill(null).map(() => new Array(2))
-
-  dp[0] = [0, -prices[0]]
-  for (let i = 1, l = prices.length; i < l; i++) {
-    dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i])
-    dp[i][0] = Math.max(dp[i - 1][1] + prices[i] - fee, dp[i - 1][0])
+  let sell = 0
+  let buy = -prices[0]
+  const len = prices.length
+  for (let i = 0; i < len; i++) {
+    const newSell = Math.max(buy + prices[i] - fee, sell)
+    buy = Math.max(buy, sell - prices[i])
+    sell = newSell
   }
-  return dp[prices.length - 1][0]
-};
+  return sell
+}
 
 // @lc code=end
 
