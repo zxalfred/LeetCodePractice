@@ -11,33 +11,37 @@
  */
 var setZeroes = function(matrix) {
   const row = matrix.length
-  if (row === 0) return []
   const col = matrix[0].length
-  const zeroRow = new Array(row).fill(false)
-  const zeroCol = new Array(col).fill(false)
+  let isFirstColZero = false
 
-  for (let i = 0; i < row; i++)  {
-    for (let j = 0; j < col; j++) {
-      const val = matrix[i][j]
-      if (val === 0) {
-        zeroRow[i] = true
-        zeroCol[j] = true
+  for (let i = 0; i < row; i++) {
+    if (matrix[i][0] === 0) {
+      isFirstColZero = true
+    }
+    for (let j = 1; j < col; j++) {
+      if (matrix[i][j] === 0) {
+        matrix[i][0] = 0
+        matrix[0][j] = 0
       }
     }
   }
-  for (let i = 0; i < row; i++) {
-    if (zeroRow[i] === true) {
-      matrix[i] = new Array(col).fill(0)
-    }
-  }
-  for (let j = 0; j < col; j++) {
-    if (zeroCol[j] === true) {
-      for (let i = 0; i < row; i++) {
+  for (let i = 1; i < row; i++) {
+    for (let j = 1; j < col; j++) {
+      if (matrix[i][0] === 0 || matrix[0][j] === 0) {
         matrix[i][j] = 0
       }
     }
   }
-  return matrix
+  if (matrix[0][0] === 0) {
+    for (let j = 1; j < col; j++) {
+      matrix[0][j] = 0
+    }
+  }
+  if (isFirstColZero) {
+    for (let i = 0; i < row; i++) {
+      matrix[i][0] = 0
+    }
+  }
 };
 
 // @lc code=end
