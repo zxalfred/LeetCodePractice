@@ -10,7 +10,18 @@
  * @return {string}
  */
 var simplifyPath = function(path) {
-
+  const pathArr = path.split('/')
+  const stack = []
+  for (let i = 0, l = pathArr.length; i < l; i++) {
+    const val = pathArr[i]
+    if (val === '.' || val === '') continue
+    if (val === '..') {
+      stack.pop()
+    } else {
+      stack.push(val)
+    }
+  }
+  return `/${stack.join('/')}`
 };
 // @lc code=end
 
