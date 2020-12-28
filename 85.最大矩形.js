@@ -1,12 +1,12 @@
 /*
- * @lc app=leetcode.cn id=84 lang=javascript
+ * @lc app=leetcode.cn id=85 lang=javascript
  *
- * [84] 柱状图中最大的矩形
+ * [85] 最大矩形
  */
 
 // @lc code=start
 /**
- * @param {number[]} heights
+ * @param {character[][]} matrix
  * @return {number}
  */
 var largestRectangleArea = function(heights) {
@@ -32,6 +32,30 @@ var largestRectangleArea = function(heights) {
   }
   return result
 }
+var maximalRectangle = function(matrix) {
+  const row = matrix.length
+  if (!row) return 0
+  const col = matrix[0].length
+  let result = 0
+  const left = new Array(row).fill(0).map(() => new Array(col))
+  const heights = new Array(col).fill(0).map(() => new Array())
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      if (matrix[i][j] === '0') {
+        left[i][j] = 0
+      } else {
+        left[i][j] = (left[i][j - 1] || 0) + 1
+      }
+      heights[j].push(left[i][j])
+    }
+  }
+
+  for (let i = 0; i < col; i++) {
+    result = Math.max(result, largestRectangleArea(heights[i]))
+  }
+
+  return result
+};
 
 // @lc code=end
 
