@@ -9,9 +9,6 @@
  * @param {number[]} citations
  * @return {number}
  */
-// 0 1 3 3 5 6   6
-// 1 2
-// 0 1
 var hIndex = function(citations) {
   const l = citations.length
   if (!l) return 0
