@@ -9,25 +9,25 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
-  const options = new Set(nums)
+ var permute = function(nums) {
   const result = []
-
-  const backtrack = (arr) => {
-    if (!options.size) {
-      result.push(arr)
+  const l = nums.length
+  const backTrack = (now, set) => {
+    if (now.length === l) {
+      result.push(now)
       return
     }
-
-    const values = [...options]
-    for (const val of values) {
-      options.delete(val)
-      backtrack([...arr, val])
-      options.add(val)
+    for (const val of nums) {
+      if (!set.has(val)) {
+        backTrack(now.concat(val), set.add(val))
+        set.delete(val)
+      }
     }
   }
 
-  backtrack([])
+  for (const val of nums) {
+    backTrack([val], new Set([val]))
+  }
 
   return result
 };
