@@ -18,14 +18,15 @@
     const randomIndex = Math.floor(Math.random() * (right - left + 1) + left)
     const base = arr[randomIndex]
     swap(arr, right, randomIndex)
-    let i = left - 1
+    let i = left
     for (let j = left; j < right; j++) {
       if (arr[j] <= base) {
-        swap(arr, ++i, j)
+        swap(arr, j, i)
+        i++
       }
     }
-    swap(arr, i + 1, right)
-    return i + 1
+    swap(arr, i, right)
+    return i
   }
   
   const quickSelect = (arr, left, right, k) => {
