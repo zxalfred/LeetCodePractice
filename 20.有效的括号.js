@@ -11,22 +11,24 @@
  */
 var isValid = function(s) {
   const l = s.length
-  const arr = []
   const map = new Map([
-    ['(', ')'],
-    ['{', '}'],
-    ['[', ']']
+    [')', '('],
+    [']', '['],
+    ['}', '{']
   ])
+  const stack = []
+
   for (let i = 0; i < l; i++) {
     const val = s[i]
-    if (map.has(val)) {
-      arr.push(val)
-      continue
-    } else if (val !== map.get(arr.pop())) {
+    const pair = map.get(val)
+    if (pair === undefined) {
+      stack.push(val)
+    } else if (pair !== stack.pop()) {
       return false
     }
   }
-  return !arr.length
+
+  return !stack.length
 };
 // @lc code=end
 

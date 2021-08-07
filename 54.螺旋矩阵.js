@@ -10,47 +10,50 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
-  const row = matrix.length
-  if (!row) return []
-  const col = matrix[0].length
-  if (!col) return []
   const result = []
-  let maxRound = Math.max(Math.min(row, col) - 2, 0)
+  const row = matrix.length
+  const col = matrix[0].length
 
-  for (let r = 0; r <= maxRound; r++) {
-    const minX = 0 + r
-    const maxX = row - r - 1
-    const minY = 0 + r
-    const maxY = col - r - 1
-    let x = minX
-    let y = minY
-    while (y <= maxY) {
-      result.push(matrix[x][y])
-      y++
+  let m1 = 0
+  let m2 = row - 1
+  let n1 = 0
+  let n2 = col - 1
+  
+  while (m1 <= m2 && n1 <= n2) {
+    let i = m1
+    let j = n1
+    while (j <= n2) {
+      result.push(matrix[i][j])
+      j++
     }
-    y--
-    x++
-    if (x > maxX) break
-    while (x <= maxX) {
-      result.push(matrix[x][y])
-      x++
+    j--
+    i++
+    if (i > m2) return result
+    while (i <= m2) {
+      result.push(matrix[i][j])
+      i++
     }
-    x--
-    y--
-    if (y < minY) break
-    while (y >= minY) {
-      result.push(matrix[x][y])
-      y--
+    i--
+    j--
+    if (j < n1) return result
+    while (j >= n1) {
+      result.push(matrix[i][j])
+      j--
     }
-    y++
-    x--
-    while (x >= minX + 1) {
-      result.push(matrix[x][y])
-      x--
+    j++
+    i--
+    while (i > m1) {
+      result.push(matrix[i][j])
+      i--
     }
+    m1++
+    m2--
+    n1++
+    n2--
   }
 
   return result
 };
+
 // @lc code=end
 
