@@ -18,16 +18,14 @@
  * @return {number[]}
  */
 var postorderTraversal = function(root) {
+  if (!root) return []
+  const stack = [root]
   const result = []
-  const stack = []
-  while (root || stack.length) {
-    while (root) {
-      result.push(root.val)
-      stack.push(root)
-      root = root.right
-    }
+  while (stack.length) {
     const node = stack.pop()
-    root = node.left
+    result.push(node.val)
+    if (node.left) stack.push(node.left)
+    if (node.right) stack.push(node.right)
   }
 
   return result.reverse()
