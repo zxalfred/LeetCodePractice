@@ -10,34 +10,39 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-  const l = nums.length
-  if (l < 3) return []
-  nums.sort((a, b) => a - b)
+  if (nums.length < 3) return []
   const result = []
-  for(let k = 0; k < l - 2;) {
+  nums.sort((a, b) => a - b)
+  const l = nums.length
+  let k = 0
+  while (k <= l - 2) {
+    const base = nums[k]
+    const target = -base
     let i = k + 1
     let j = l - 1
-    const base = nums[k]
     while (i < j) {
-      const leftVal = nums[i]
-      const rightVal = nums[j]
-      const sum = leftVal + rightVal + base
-      if (sum > 0) {
+      const left = nums[i]
+      const right = nums[j]
+      const sum = left + right
+      if (sum > target) {
         j--
-      } else if (sum < 0) {
+      } else if (sum < target) {
         i++
       } else {
         result.push([nums[k], nums[i], nums[j]])
-        while (nums[i] === leftVal) {
+        i++
+        j--
+        while (nums[i] === left) {
           i++
         }
-        while (nums[j] === rightVal) {
+        while (nums[j] === right) {
           j--
         }
       }
     }
-    
-    while (base === nums[k]) {
+
+    k++
+    while (nums[k] === base) {
       k++
     }
   }
