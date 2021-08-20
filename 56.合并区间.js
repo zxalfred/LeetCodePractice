@@ -16,7 +16,7 @@ var merge = function(intervals) {
   for (const item of arr) {
     if (!curr) {
       curr = item
-    }else if (curr[1] >= item[0]) {
+    } else if (curr[1] >= item[0]) {
       curr[1] = Math.max(curr[1], item[1])
     } else {
       result.push(curr)

@@ -11,13 +11,12 @@
  */
 var maxProfit = function(prices) {
   let result = 0
-  let minPrice = Infinity
-
-  for (const price of prices) {
-    if (price < minPrice) {
-      minPrice = price
-    } else if (price - minPrice > result) {
-      result = price - minPrice
+  let prevMin = Infinity
+  for (const val of prices) {
+    if (val < prevMin) {
+      prevMin = val
+    } else {
+      result = Math.max(result, val - prevMin)
     }
   }
 
