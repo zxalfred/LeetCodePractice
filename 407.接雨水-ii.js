@@ -38,26 +38,24 @@ var trapRainWater = function(heightMap) {
     if (heightDiff > 0) {
       result += heightDiff
       heap.add([i, j, prevHeight])
-      return heightDiff
     } else {
       heap.add([i, j, height])
-      return 0
     }
   }
 
   while (heap.size()) {
     const [i, j, height] = heap.pop()
     if (i - 1 >= 0 && !visited[i - 1][j]) {
-      result += compareNearby(i - 1, j, height)
+      compareNearby(i - 1, j, height)
     }
     if (i + 1 < row && !visited[i + 1][j]) {
-      result += compareNearby(i + 1, j, height)
+      compareNearby(i + 1, j, height)
     }
     if (j - 1 >= 0 && !visited[i][j - 1]) {
-      result += compareNearby(i, j - 1, height)
+      compareNearby(i, j - 1, height)
     }
     if (j + 1 < col && !visited[i][j + 1]) {
-      result += compareNearby(i, j + 1, height)
+      compareNearby(i, j + 1, height)
     }
   }
 
@@ -111,6 +109,5 @@ class Heap {
   }
 }
 
-console.log(trapRainWater([[3,3,3,3,3],[3,2,2,2,3],[3,2,1,2,3],[3,2,2,2,3],[3,3,3,3,3]]))
 // @lc code=end
 
