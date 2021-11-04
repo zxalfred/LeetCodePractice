@@ -9,25 +9,37 @@
  * @param {number} num
  * @return {boolean}
  */
+// 1. 二分法
+// var isPerfectSquare = function(num) {
+//   if (num === 1) return true
+//   if (num <= 3) return false
+//   const help = (left, right) => {
+//     if (right - left <= 1) {
+//       return right ** 2 === num || left ** 2 === num
+//     }
+//     const middle = (right + left) >> 1
+//     const val = middle ** 2
+//     if (val === num) return true
+//     if (val > num) {
+//       return help(left, middle)
+//     } else {
+//       return help(middle, right)
+//     }
+//   }
+//   return help(1, num >> 1)
+// };
+// 2. 公式
 var isPerfectSquare = function(num) {
   if (num === 1) return true
-  if (num <= 3) return false
-  const help = function(target, left, right) {
-    if (left - right <= 1) {
-      return (left * left === target || right * right === target)
-    }
-    const middle = (left + right) >> 1
-    const val = middle ** 2
-    if (val === target) {
-      return middle
-    } else if (val > target) {
-      return help(target, middle, right)
-    } else {
-      return help(target, left, middle)
-    }
+  let square = 1
+  let n = 1
+  while (square < num) {
+    square += 2 * n + 1
+    if (square === num) return true
+    n++
   }
-  
-  return help(num, num >> 1, 1)
-};
+
+  return false
+}
 // @lc code=end
 
