@@ -10,7 +10,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var canPlaceFlowers = function(flowerbed, n) {
+const canPlaceFlowers = function (flowerbed, n) {
   let count = 0
   const l = flowerbed.length
   let i = 0
@@ -26,11 +26,10 @@ var canPlaceFlowers = function(flowerbed, n) {
         i += 2
       }
     } else {
-     i += 2 
+      i += 2
     }
   }
   return count >= n
-};
+}
 
 // @lc code=end
-

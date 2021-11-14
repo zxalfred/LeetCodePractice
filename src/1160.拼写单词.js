@@ -10,7 +10,7 @@
  * @param {string} chars
  * @return {number}
  */
-var countCharacters = function(words, chars) {
+const countCharacters = function (words, chars) {
   const a = new Array(26).fill(0)
   let count = 0
 
@@ -35,6 +35,5 @@ var countCharacters = function(words, chars) {
   }
 
   return count
-};
+}
 // @lc code=end
-

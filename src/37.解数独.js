@@ -9,7 +9,7 @@
  * @param {character[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-var isValid = function(board, row, col, c) {
+const isValid = function (board, row, col, c) {
   for (let i = 0; i < 9; i++) {
     if (board[i][col] !== '.' && board[i][col] === c) return false
     if (board[row][i] !== '.' && board[row][i] === c) return false
@@ -18,7 +18,7 @@ var isValid = function(board, row, col, c) {
   return true
 }
 
-var solve = function(board) {
+var solve = function (board) {
   const l = board.length
   for (let i = 0; i < l; i++) {
     for (let j = 0; j < board[0].length; j++) {
@@ -28,9 +28,8 @@ var solve = function(board) {
             board[i][j] = String(val)
             if (solve(board)) {
               return true
-            } else {
-              board[i][j] = '.'
             }
+            board[i][j] = '.'
           }
         }
         return false
@@ -40,11 +39,9 @@ var solve = function(board) {
   return true
 }
 
-
-var solveSudoku = function(board) {
+const solveSudoku = function (board) {
   if (board === null || board.length === 0) return
 
   solve(board)
-};
+}
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {number}
  */
-var maxSumAfterPartitioning = function(arr, k) {
+const maxSumAfterPartitioning = function (arr, k) {
   if (arr.length === 1) return arr[0]
 
   const dp = []
@@ -32,7 +32,6 @@ var maxSumAfterPartitioning = function(arr, k) {
   }
 
   return dp[dp.length - 1]
-};
+}
 
 // @lc code=end
-

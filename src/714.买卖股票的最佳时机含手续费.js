@@ -10,7 +10,7 @@
  * @param {number} fee
  * @return {number}
  */
-var maxProfit = function(prices, fee) {
+const maxProfit = function (prices, fee) {
   let sell = 0
   let buy = -prices[0]
   const len = prices.length
@@ -23,4 +23,3 @@ var maxProfit = function(prices, fee) {
 }
 
 // @lc code=end
-

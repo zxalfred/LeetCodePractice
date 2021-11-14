@@ -10,11 +10,11 @@
  * @param {string} p
  * @return {boolean}
  */
-var isMatch = function(s, p) {
+const isMatch = function (s, p) {
   const sLen = s.length
   const pLen = p.length
   if (sLen === 0 && pLen === 0) return true
-  
+
   const dp = Array.from(
     new Array(sLen + 1),
     () => new Array(pLen + 1).fill(false),
@@ -39,6 +39,5 @@ var isMatch = function(s, p) {
   }
 
   return dp[sLen][pLen]
-};
+}
 // @lc code=end
-

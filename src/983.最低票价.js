@@ -10,7 +10,7 @@
  * @param {number[]} costs
  * @return {number}
  */
-var mincostTickets = function(days, costs) {
+const mincostTickets = function (days, costs) {
   const memo = new Array(366)
   const dayset = new Set()
 
@@ -34,6 +34,5 @@ var mincostTickets = function(days, costs) {
   }
 
   return dp(1)
-};
+}
 // @lc code=end
-

@@ -10,16 +10,16 @@
  * @param {string} word
  * @return {boolean}
  */
-var exist = function(board, word) {
+const exist = function (board, word) {
   const rowLen = board.length
   const colLen = board[0].length
   const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
 
-  var isValid = function(index, i, j) {
+  var isValid = function (index, i, j) {
     if (board[i][j] !== word[index]) {
       return false
     }
-    
+
     index++
     if (index === word.length) return true
 
@@ -29,7 +29,7 @@ var exist = function(board, word) {
       const _i = i + diff[0]
       const _j = j + diff[1]
       if (_i >= 0 && _i < rowLen
-        && _j >=0 && _j < colLen
+        && _j >= 0 && _j < colLen
         && board[_i][_j] !== ''
         && isValid(index, _i, _j)
       ) return true
@@ -47,6 +47,5 @@ var exist = function(board, word) {
     }
   }
   return false
-};
+}
 // @lc code=end
-

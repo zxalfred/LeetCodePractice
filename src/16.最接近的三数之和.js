@@ -10,7 +10,7 @@
  * @param {number} target
  * @return {number}
  */
-var threeSumClosest = function(nums, target) {
+const threeSumClosest = function (nums, target) {
   let minDiff = Infinity
   let result
   nums = nums.sort((a, b) => a - b)
@@ -29,7 +29,7 @@ var threeSumClosest = function(nums, target) {
       }
       if (sum === target) {
         return sum
-      } else if (sum > target) {
+      } if (sum > target) {
         tail--
       } else {
         head++
@@ -42,6 +42,5 @@ var threeSumClosest = function(nums, target) {
   }
 
   return result
-};
+}
 // @lc code=end
-

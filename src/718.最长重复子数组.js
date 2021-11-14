@@ -10,8 +10,8 @@
  * @param {number[]} nums2
  * @return {number}
  */
-var findLength = function(nums1, nums2) {
-  const dp = Array.from({length: nums1.length + 1}, () => new Array(nums2.length + 1).fill(0))
+const findLength = function (nums1, nums2) {
+  const dp = Array.from({ length: nums1.length + 1 }, () => new Array(nums2.length + 1).fill(0))
   let res = 0
   for (let i = 1; i < nums1.length + 1; i++) {
     for (let j = 1; j < nums2.length + 1; j++) {
@@ -24,6 +24,5 @@ var findLength = function(nums1, nums2) {
     }
   }
   return res
-};
+}
 // @lc code=end
-

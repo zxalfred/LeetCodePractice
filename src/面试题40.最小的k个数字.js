@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {number[]}
  */
-var partition = function(arr, left, right) {
+const partition = function (arr, left, right) {
   let i = left
   let j = right
   const baseVal = arr[right]
@@ -22,8 +22,7 @@ var partition = function(arr, left, right) {
   return i
 }
 
-
-var getLeastNumbers = function(arr, k) {
+const getLeastNumbers = function (arr, k) {
   const len = arr.length
   if (k >= len) return arr
   let left = 0
@@ -40,6 +39,6 @@ var getLeastNumbers = function(arr, k) {
   }
 
   return arr.slice(0, pos)
-};
+}
 
-console.log(getLeastNumbers([0,1,2,1], 1))
+console.log(getLeastNumbers([0, 1, 2, 1], 1))

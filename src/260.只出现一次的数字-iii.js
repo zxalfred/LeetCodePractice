@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var singleNumber = function(nums) {
+const singleNumber = function (nums) {
   let x = 0
   for (const val of nums) {
     x ^= val
@@ -26,6 +26,5 @@ var singleNumber = function(nums) {
     }
   }
   return [a, b]
-};
+}
 // @lc code=end
-

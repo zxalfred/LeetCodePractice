@@ -9,11 +9,10 @@
  * @param {number[]} nums
  * @return {number}
  */
-var missingNumber = function(nums) {
+const missingNumber = function (nums) {
   const l = nums.length
   const sum = (1 + l) * l / 2
   return nums.reduce((diff, item) => diff - item, sum)
-};
+}
 
 // @lc code=end
-

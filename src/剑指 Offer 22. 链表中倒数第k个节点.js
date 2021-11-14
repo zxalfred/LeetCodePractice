@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {ListNode}
  */
-var getKthFromEnd = function(head, k) {
+const getKthFromEnd = function (head, k) {
   let slow = head
   let fast = head
   while (k > 1) {
@@ -22,4 +22,4 @@ var getKthFromEnd = function(head, k) {
     fast = fast.next
   }
   return slow
-};
+}

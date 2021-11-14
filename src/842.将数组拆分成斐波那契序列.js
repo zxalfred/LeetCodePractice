@@ -9,7 +9,7 @@
  * @param {string} S
  * @return {number[]}
  */
-var splitIntoFibonacci = function(S) {
+const splitIntoFibonacci = function (S) {
   const max = 2147483647 // 最大值
 
   /**
@@ -35,21 +35,20 @@ var splitIntoFibonacci = function(S) {
       const len = arr.length
       if (len > 1) { // 当结果数组长度大于1时，当前值需要满足等于前两个数之和的条件
         if (arr[len - 1] + arr[len - 2] === item) {
-          const res = backTrack([...arr, item],i + 1)
+          const res = backTrack([...arr, item], i + 1)
           if (res) return res // 如果结果有效，返回结果
           break // 只可能有一种i使当前值满足 a[n]=== a[n - 2] + a[n - 1]
         }
       } else {
-        const res = backTrack([...arr, item],i + 1)
+        const res = backTrack([...arr, item], i + 1)
         if (res) return res // 如果结果有效，返回结果
       }
     }
   }
 
   return backTrack([], 0) || []
-};
+}
 
 console.log(splitIntoFibonacci('539834657215398346785398346991079669377161950407626991734534318677529701785098211336528511'))
 
 // @lc code=end
-

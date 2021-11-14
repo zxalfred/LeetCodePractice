@@ -9,23 +9,23 @@
  * @param {number} n
  * @return {string[][]}
  */
-var solveNQueens = function(n) {
+const solveNQueens = function (n) {
   if (n < 1) return []
   const res = []
-  
+
   const dfs = (row, col, ltr, rtl, sum) => {
     if (row === n) {
       res.push([...sum])
       return
     }
 
-    let bits = (~(col|ltr|rtl))&((1<<n)-1)
-    while(bits > 0) {
-      const val = bits&(-bits)
+    let bits = (~(col | ltr | rtl)) & ((1 << n) - 1)
+    while (bits > 0) {
+      const val = bits & (-bits)
       sum.push(val)
-      dfs(row + 1, col|val, (ltr|val)>>1, (rtl|val)<<1, sum)
+      dfs(row + 1, col | val, (ltr | val) >> 1, (rtl | val) << 1, sum)
       sum.pop()
-      bits = bits&(bits-1)
+      bits &= (bits - 1)
     }
   }
 
@@ -37,7 +37,7 @@ var solveNQueens = function(n) {
       let val = res[i][j]
       let index = -1
       while (val) {
-        val = val>>1
+        val >>= 1
         index++
       }
       let x = new Array(n).fill('.')
@@ -48,5 +48,5 @@ var solveNQueens = function(n) {
   }
 
   return res
-};
+}
 // @lc code=end

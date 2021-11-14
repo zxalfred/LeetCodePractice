@@ -10,7 +10,7 @@
  * @param {number} target
  * @return {number}
  */
-var searchInsert = function(nums, target) {
+const searchInsert = function (nums, target) {
   let i = 0
   let j = nums.length - 1
 
@@ -26,6 +26,5 @@ var searchInsert = function(nums, target) {
   }
 
   return i
-};
+}
 // @lc code=end
-

@@ -21,7 +21,7 @@ const reverse = (nums, index) => {
   }
 }
 
-var nextPermutation = function(nums) {
+const nextPermutation = function (nums) {
   const l = nums.length
   if (l < 2) return nums
   let i = l - 2
@@ -40,4 +40,3 @@ var nextPermutation = function(nums) {
   return nums
 }
 // @lc code=end
-

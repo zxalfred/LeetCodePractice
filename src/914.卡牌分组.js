@@ -14,7 +14,7 @@ const gcd = (a, b) => {
   return gcd(b, a % b)
 }
 
-var hasGroupsSizeX = function(deck) {
+const hasGroupsSizeX = function (deck) {
   const map = new Map()
 
   for (const item of deck) {
@@ -26,11 +26,8 @@ var hasGroupsSizeX = function(deck) {
     }
   }
 
-  const val = Array.from(map.values()).reduce((a, b) => {
-    return gcd(a, b)
-  })
+  const val = Array.from(map.values()).reduce((a, b) => gcd(a, b))
 
   return val > 1
-};
+}
 // @lc code=end
-

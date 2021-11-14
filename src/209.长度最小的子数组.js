@@ -10,17 +10,17 @@
  * @param {number[]} nums
  * @return {number}
  */
-var minSubArrayLen = function(target, nums) {
+const minSubArrayLen = function (target, nums) {
   let i = 0
   let j = 0
   let sum = 0
   let result = Infinity
   while (j < nums.length) {
-    sum = sum + nums[j]
+    sum += nums[j]
     if (sum >= target) {
       result = Math.min(result, j - i + 1)
       while (true) {
-        sum = sum - nums[i]
+        sum -= nums[i]
         i++
         if (sum >= target) {
           result = Math.min(result, j - i + 1)
@@ -31,7 +31,6 @@ var minSubArrayLen = function(target, nums) {
   }
 
   return isFinite(result) ? result : 0
-};
+}
 
 // @lc code=end
-

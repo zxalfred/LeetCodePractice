@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function(s) {
+const longestPalindrome = function (s) {
   if (!s) return ''
   let max = 1
   let result = s[0]
@@ -44,6 +44,5 @@ var longestPalindrome = function(s) {
     }
   }
   return result
-};
+}
 // @lc code=end
-

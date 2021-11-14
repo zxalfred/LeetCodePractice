@@ -8,28 +8,28 @@
 /**
  * @param {number[]} nums
  */
-var Solution = function(nums) {
+const Solution = function (nums) {
   this.rowArr = [...nums]
-};
+}
 
 /**
  * @return {number[]}
  */
-Solution.prototype.reset = function() {
+Solution.prototype.reset = function () {
   return this.rowArr
-};
+}
 
 /**
  * @return {number[]}
  */
-Solution.prototype.shuffle = function() {
+Solution.prototype.shuffle = function () {
   const result = [...this.rowArr]
-  for (let i = this.rowArr.length - 1; i > 0 ; i--) {
-    const randomIdx = ~~(Math.random() * (i + 1))
-    ;[result[i], result[randomIdx]] = [result[randomIdx], result[i]]
+  for (let i = this.rowArr.length - 1; i > 0; i--) {
+    const randomIdx = ~~(Math.random() * (i + 1));
+    [result[i], result[randomIdx]] = [result[randomIdx], result[i]]
   }
   return result
-};
+}
 
 /**
  * Your Solution object will be instantiated and called as such:

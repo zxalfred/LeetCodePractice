@@ -9,7 +9,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var surfaceArea = function(grid) {
+const surfaceArea = function (grid) {
   const rowLen = grid.length
   const colLen = grid[0].length
   let cubeCount = 0 // 立方体数量
@@ -37,6 +37,5 @@ var surfaceArea = function(grid) {
   }
 
   return cubeCount * 6 - upDownCount - sideCount
-};
+}
 // @lc code=end
-

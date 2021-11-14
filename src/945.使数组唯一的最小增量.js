@@ -9,7 +9,7 @@
  * @param {number[]} A
  * @return {number}
  */
-var quickSort = (a) => {
+const quickSort = (a) => {
   const sort = (arr, left = 0, right = arr.length - 1) => {
     if (left >= right) return
 
@@ -38,7 +38,7 @@ var quickSort = (a) => {
   return newArr
 }
 
-var minIncrementForUnique = function(A) {
+const minIncrementForUnique = function (A) {
   if (A.length < 2) return 0
   const arr = quickSort(A)
 
@@ -56,6 +56,5 @@ var minIncrementForUnique = function(A) {
   }
 
   return count
-};
+}
 // @lc code=end
-

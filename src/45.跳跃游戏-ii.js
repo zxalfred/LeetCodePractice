@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var jump = function(nums) {
+const jump = function (nums) {
   let canJumpMax = 0
   let lastCanJumpMax = 0
   let step = 0
@@ -20,11 +20,10 @@ var jump = function(nums) {
       lastCanJumpMax = canJumpMax
       step++
     }
-    if(lastCanJumpMax >= l){
-      break;
+    if (lastCanJumpMax >= l) {
+      break
     }
   }
   return step
-};
+}
 // @lc code=end
-

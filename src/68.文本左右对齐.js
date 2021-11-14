@@ -10,7 +10,7 @@
  * @param {number} maxWidth
  * @return {string[]}
  */
-var fullJustify = function(words, maxWidth) {
+const fullJustify = function (words, maxWidth) {
   const result = []
   let currRow = []
   let currLen = 0
@@ -26,8 +26,8 @@ var fullJustify = function(words, maxWidth) {
       let str = currRow[0]
       for (let j = 1; j < currRow.length; j++) {
         if (left) {
-         str += ' ' 
-         left--
+          str += ' '
+          left--
         }
         str = str + ' '.repeat(every) + currRow[j]
       }
@@ -42,7 +42,6 @@ var fullJustify = function(words, maxWidth) {
   result.push(currRow.join(' ').padEnd(maxWidth))
 
   return result
-};
+}
 
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function(nums, val) {
+const removeElement = function (nums, val) {
   let i = 0
   let j = 0
 
@@ -24,6 +24,5 @@ var removeElement = function(nums, val) {
     }
   }
   return i
-};
+}
 // @lc code=end
-

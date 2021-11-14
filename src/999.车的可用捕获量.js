@@ -9,8 +9,9 @@
  * @param {character[][]} board
  * @return {number}
  */
-var numRookCaptures = function(board) {
-  let x, y
+const numRookCaptures = function (board) {
+  let x; let
+    y
   let count = 0
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
@@ -27,8 +28,8 @@ var numRookCaptures = function(board) {
     let a = x + item[0]
     let b = y + item[1]
     while (
-      a >=0 && a < 8
-      && b >=0 && b < 8
+      a >= 0 && a < 8
+      && b >= 0 && b < 8
     ) {
       const val = board[a][b]
       if (val === 'p') {
@@ -37,12 +38,11 @@ var numRookCaptures = function(board) {
       } else if (val === 'B') {
         break
       }
-      a = a + item[0]
-      b = b + item[1]
+      a += item[0]
+      b += item[1]
     }
   }
 
   return count
-};
+}
 // @lc code=end
-

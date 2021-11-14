@@ -9,7 +9,7 @@
  * @param {number[]} cost
  * @return {number}
  */
-var minCostClimbingStairs = function(cost) {
+const minCostClimbingStairs = function (cost) {
   cost.push(0)
   const l = cost.length
   const dp = [0]
@@ -17,6 +17,5 @@ var minCostClimbingStairs = function(cost) {
     dp[i] = Math.min(dp[i - 1], dp[i - 2] === undefined ? Infinity : dp[i - 2]) + cost[i - 1]
   }
   return dp[l]
-};
+}
 // @lc code=end
-

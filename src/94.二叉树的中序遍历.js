@@ -17,7 +17,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var inorderTraversal = function(root) {
+const inorderTraversal = function (root) {
   const result = []
   const stack = []
 
@@ -33,7 +33,6 @@ var inorderTraversal = function(root) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {number}
  */
-var numberOfSubarrays = function(nums, k) {
+const numberOfSubarrays = function (nums, k) {
   const l = nums.length
   let result = 0
   const odd = []
@@ -26,6 +26,5 @@ var numberOfSubarrays = function(nums, k) {
   }
 
   return result
-};
+}
 // @lc code=end
-

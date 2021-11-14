@@ -9,7 +9,7 @@
  * @param {number[]} arr
  * @return {number[]}
  */
-var sortByBits = function(arr) {
+const sortByBits = function (arr) {
   const map = new Map()
   const calcBits = (num) => {
     if (map.has(num)) {
@@ -17,11 +17,11 @@ var sortByBits = function(arr) {
     }
     let count = 0
     let i = num
-    while(i) {
+    while (i) {
       if (i & 1 === 1) {
         count++
       }
-      i = i >> 1
+      i >>= 1
     }
     map.set(num, count)
     return count
@@ -32,6 +32,5 @@ var sortByBits = function(arr) {
     if (diff !== 0) return diff
     return a - b
   })
-};
+}
 // @lc code=end
-

@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var massage = function(nums) {
+const massage = function (nums) {
   if (!nums.length) return 0
   if (nums.length === 1) return nums[0]
 
@@ -18,4 +18,4 @@ var massage = function(nums) {
   }
 
   return Math.max(dp0, dp1)
-};
+}

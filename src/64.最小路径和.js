@@ -9,7 +9,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var minPathSum = function(grid) {
+const minPathSum = function (grid) {
   const row = grid.length
   const col = grid[0].length
 
@@ -34,6 +34,5 @@ var minPathSum = function(grid) {
   }
 
   return dp[row - 1][col - 1]
-};
+}
 // @lc code=end
-

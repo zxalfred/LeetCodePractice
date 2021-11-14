@@ -17,10 +17,10 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
+const addTwoNumbers = function (l1, l2) {
   const stack1 = []
   const stack2 = []
-  let resultStack = []
+  const resultStack = []
   let current = null
   let head = null
   while (l1) {
@@ -31,7 +31,7 @@ var addTwoNumbers = function(l1, l2) {
     stack2.push(l2.val)
     l2 = l2.next
   }
-  
+
   let flag = 0
 
   while (stack1.length || stack2.length || flag) {
@@ -55,6 +55,5 @@ var addTwoNumbers = function(l1, l2) {
   }
 
   return head
-};
+}
 // @lc code=end
-

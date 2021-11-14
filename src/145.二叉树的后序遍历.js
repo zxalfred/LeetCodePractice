@@ -17,7 +17,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var postorderTraversal = function(root) {
+const postorderTraversal = function (root) {
   if (!root) return []
   const stack = [root]
   const result = []
@@ -29,6 +29,5 @@ var postorderTraversal = function(root) {
   }
 
   return result.reverse()
-};
+}
 // @lc code=end
-

@@ -9,8 +9,7 @@
  * @param {character[][]} board
  * @return {boolean}
  */
-var isValidSudoku = function(board) {
+const isValidSudoku = function (board) {
 
-};
+}
 // @lc code=end
-

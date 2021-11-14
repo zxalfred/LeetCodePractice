@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
+const subsets = function (nums) {
   const result = [[]]
 
   const backtrack = (arr, cur) => {
@@ -26,7 +26,6 @@ var subsets = function(nums) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

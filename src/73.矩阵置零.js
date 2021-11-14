@@ -9,7 +9,7 @@
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
-var setZeroes = function(matrix) {
+const setZeroes = function (matrix) {
   const row = matrix.length
   const col = matrix[0].length
   let isFirstColZero = false
@@ -42,7 +42,6 @@ var setZeroes = function(matrix) {
       matrix[i][0] = 0
     }
   }
-};
+}
 
 // @lc code=end
-

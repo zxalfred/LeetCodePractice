@@ -15,6 +15,12 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    'no-unused-vars': ['warn'],
+    'no-unused-vars': 1,
+    semi: [2, 'never'],
+    'func-names': 0,
+    'no-plusplus': 0,
+    'max-len': 0,
+    'no-param-reassign': 0,
+    'consistent-return': 0,
   },
 };

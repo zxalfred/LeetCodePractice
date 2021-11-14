@@ -9,14 +9,14 @@
  * @param {number[][]} M
  * @return {number}
  */
-var findCircleNum = function(M) {
+const findCircleNum = function (M) {
   const l = M.length
   if (!l) return 0
   let result = 0
   const color = new Array(l).fill(0)
 
   const bfs = (queue) => {
-    while(queue.length) {
+    while (queue.length) {
       const u = queue.pop()
       if (color[u] === 1) continue
       color[u] = 1
@@ -36,6 +36,5 @@ var findCircleNum = function(M) {
   }
 
   return result
-};
+}
 // @lc code=end
-

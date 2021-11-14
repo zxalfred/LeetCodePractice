@@ -10,16 +10,16 @@
  * @param {string} version2
  * @return {number}
  */
-var compareVersion = function(version1, version2) {
+const compareVersion = function (version1, version2) {
   const reg = /\d+(?=\.)/g
-  const v1 = (version1 + '.').match(reg).map(val => Number(val))
-  const v2 = (version2 + '.').match(reg).map(val => Number(val))
+  const v1 = (`${version1}.`).match(reg).map((val) => Number(val))
+  const v2 = (`${version2}.`).match(reg).map((val) => Number(val))
   let i = 0
   while (i < v1.length) {
     const v2Value = v2[i] || 0
     if (v1[i] > v2Value) {
       return 1
-    } else if (v1[i] < v2Value) {
+    } if (v1[i] < v2Value) {
       return -1
     }
     i++
@@ -29,7 +29,6 @@ var compareVersion = function(version1, version2) {
     i++
   }
   return 0
-};
+}
 
 // @lc code=end
-

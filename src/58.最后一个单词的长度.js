@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLastWord = function(s) {
+const lengthOfLastWord = function (s) {
   let count = 0
   let end = -1
   for (let i = s.length - 1; i >= 0; i--) {
@@ -29,8 +29,7 @@ var lengthOfLastWord = function(s) {
   }
 
   return count
-};
+}
 
-console.log(lengthOfLastWord("a   "))
+console.log(lengthOfLastWord('a   '))
 // @lc code=end
-

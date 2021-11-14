@@ -25,10 +25,10 @@ class Node {
   }
 }
 
-var addTwoNumbers = function(l1, l2) {
+const addTwoNumbers = function (l1, l2) {
   let currL1 = l1
   let currL2 = l2
-  
+
   const result = new Node(null)
   let currResult = result
   let prevResult = null
@@ -51,6 +51,5 @@ var addTwoNumbers = function(l1, l2) {
   }
 
   return result
-};
+}
 // @lc code=end
-

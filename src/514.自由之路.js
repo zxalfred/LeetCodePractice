@@ -10,7 +10,7 @@
  * @param {string} key
  * @return {number}
  */
-var findRotateSteps = function(ring, key) {
+const findRotateSteps = function (ring, key) {
   const ringLen = ring.length
   const keyLen = key.length
   const map = new Map()
@@ -21,7 +21,7 @@ var findRotateSteps = function(ring, key) {
   }
 
   const dp = [[]]
-  map.get(key[0]).forEach(index => {
+  map.get(key[0]).forEach((index) => {
     dp[0][index] = Math.min(index, ringLen - index)
   })
 
@@ -53,8 +53,6 @@ var findRotateSteps = function(ring, key) {
   }
 
   return result + keyLen
-};
-
+}
 
 // @lc code=end
-

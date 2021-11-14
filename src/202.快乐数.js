@@ -9,11 +9,11 @@
  * @param {number} n
  * @return {boolean}
  */
-var isHappy = function(n) {
+const isHappy = function (n) {
   let b = n
   const set = new Set()
   set.add(b)
-  var getSum = (num) => {
+  const getSum = (num) => {
     const a = String(num)
     let result = 0
     for (let i = 0; i < a.length; i++) {
@@ -27,8 +27,7 @@ var isHappy = function(n) {
     if (set.has(b)) return false
     set.add(b)
   }
-  
-  return true
-};
-// @lc code=end
 
+  return true
+}
+// @lc code=end

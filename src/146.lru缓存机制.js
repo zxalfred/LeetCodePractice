@@ -47,31 +47,31 @@ class DoubleList {
 /**
  * @param {number} capacity
  */
-var LRUCache = function(capacity) {
+const LRUCache = function (capacity) {
   this.cap = capacity
   this.map = new Map()
   this.cache = new DoubleList()
-};
+}
 
-/** 
+/**
  * @param {number} key
  * @return {number}
  */
-LRUCache.prototype.get = function(key) {
+LRUCache.prototype.get = function (key) {
   if (!this.map.has(key)) {
     return -1
   }
-  const val = this.map.get(key).val
+  const { val } = this.map.get(key)
   this.put(key, val)
   return val
-};
+}
 
-/** 
- * @param {number} key 
+/**
+ * @param {number} key
  * @param {number} value
  * @return {void}
  */
-LRUCache.prototype.put = function(key, value) {
+LRUCache.prototype.put = function (key, value) {
   const node = new Node(key, value)
   if (this.map.has(key)) {
     this.cache.remove(this.map.get(key))
@@ -81,7 +81,7 @@ LRUCache.prototype.put = function(key, value) {
   }
   this.cache.addFirst(node)
   this.map.set(key, node)
-};
+}
 
 /**
  * Your LRUCache object will be instantiated and called as such:
@@ -90,4 +90,3 @@ LRUCache.prototype.put = function(key, value) {
  * obj.put(key,value)
  */
 // @lc code=end
-

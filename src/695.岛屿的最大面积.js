@@ -9,7 +9,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var maxAreaOfIsland = function(grid) {
+const maxAreaOfIsland = function (grid) {
   if (!grid.length || !grid[0].length) return 0
   const rowLen = grid.length
   const colLen = grid[0].length
@@ -43,6 +43,5 @@ var maxAreaOfIsland = function(grid) {
   }
 
   return maxArea
-};
+}
 // @lc code=end
-

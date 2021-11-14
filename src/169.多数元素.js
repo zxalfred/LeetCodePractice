@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var majorityElement = function(nums) {
+const majorityElement = function (nums) {
   const l = nums.length
   const map = new Map()
   for (let i = 0; i < l; i++) {
@@ -18,10 +18,9 @@ var majorityElement = function(nums) {
     map.set(val, count + 1)
   }
   for (const [key, val] of map.entries()) {
-    if (val > (l / 2)){
+    if (val > (l / 2)) {
       return key
     }
   }
-};
+}
 // @lc code=end
-

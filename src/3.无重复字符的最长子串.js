@@ -17,7 +17,7 @@
 // var lengthOfLongestSubstring = function(s) {
 //   const l = s.length
 //   if (l< 2) return s.length
-  
+
 //   let i = 0
 //   let j = 0
 //   let result = 0
@@ -44,7 +44,7 @@
 // 利用 map 记下字符出现的位置
 // 若新字符存在，直接移动左边界到需要的地方，而不是一次次移动
 // // 时间复杂度 O(n)
-const lengthOfLongestSubstring = function(s) {
+const lengthOfLongestSubstring = function (s) {
   let result = 0
   const map = new Map()
   const { length: l } = s
@@ -60,8 +60,6 @@ const lengthOfLongestSubstring = function(s) {
     map.set(val, j)
   }
 
-  
   return result
 }
 // @lc code=end
-

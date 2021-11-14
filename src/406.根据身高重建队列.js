@@ -9,7 +9,7 @@
  * @param {number[][]} people
  * @return {number[][]}
  */
-var reconstructQueue = function(people) {
+const reconstructQueue = function (people) {
   const arr = people.sort((a, b) => a[0] - b[0])
   const len = people.length
   const result = new Array(len)
@@ -29,7 +29,6 @@ var reconstructQueue = function(people) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

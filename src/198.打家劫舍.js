@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function(nums) {
+const rob = function (nums) {
   let prevMax = 0
   let currMax = 0
   for (const item of nums) {
@@ -18,6 +18,5 @@ var rob = function(nums) {
     prevMax = temp
   }
   return currMax
-};
+}
 // @lc code=end
-

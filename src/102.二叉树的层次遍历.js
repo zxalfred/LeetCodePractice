@@ -17,7 +17,7 @@
  * @return {number[][]}
  */
 // BFS
-var levelOrder1 = function(root) {
+const levelOrder1 = function (root) {
   if (!root) return []
   const result = []
   const queue = [root]
@@ -35,10 +35,10 @@ var levelOrder1 = function(root) {
   }
 
   return result
-};
+}
 
 // DFS
-var levelOrder2 = function(root) {
+const levelOrder2 = function (root) {
   const result = []
   const dfs = (node, depth) => {
     if (!node) return
@@ -50,6 +50,6 @@ var levelOrder2 = function(root) {
 
   dfs(root, 0)
   return result
-};
+}
 
 // @lc code=end

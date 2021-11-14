@@ -9,9 +9,9 @@
  * @param {number[]} encoded
  * @return {number[]}
  */
-var decode = function(encoded) {
+const decode = function (encoded) {
   let a = 0
-  for (let i = 1; i < encoded.length; i+=2) {
+  for (let i = 1; i < encoded.length; i += 2) {
     a ^= encoded[i]
   }
   let all = 0
@@ -27,7 +27,6 @@ var decode = function(encoded) {
     prev = curr
   }
   return result
-};
+}
 
 // @lc code=end
-

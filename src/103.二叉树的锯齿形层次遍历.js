@@ -17,7 +17,7 @@
  * @return {number[][]}
  */
 // bfs
-var zigzagLevelOrder = function(root) {
+const zigzagLevelOrder = function (root) {
   if (!root) return []
   const result = []
   const queue = [root]
@@ -38,6 +38,5 @@ var zigzagLevelOrder = function(root) {
   }
 
   return result
-};
+}
 // @lc code=end
-

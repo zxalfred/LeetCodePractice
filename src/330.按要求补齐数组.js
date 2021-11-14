@@ -10,22 +10,21 @@
  * @param {number} n
  * @return {number}
  */
-var minPatches = function(nums, n) {
-  let result = 0;
-  let x = 1;
-  const length = nums.length;
-  let index = 0;
+const minPatches = function (nums, n) {
+  let result = 0
+  let x = 1
+  const { length } = nums
+  let index = 0
   while (x <= n) {
-      if (index < length && nums[index] <= x) {
-          x += nums[index];
-          index++;
-      } else {
-          x *= 2;
-          result++;
-      }
+    if (index < length && nums[index] <= x) {
+      x += nums[index]
+      index++
+    } else {
+      x *= 2
+      result++
+    }
   }
-  return result;
-};
+  return result
+}
 
 // @lc code=end
-

@@ -9,16 +9,15 @@
  * @param {number} n
  * @return {number}
  */
-var climbStairs = function(n) {
+const climbStairs = function (n) {
   if (n <= 2) return n
-  let i = 1 
+  let i = 1
   let j = 2
   while (n > 2) {
     [i, j] = [j, i + j]
     n--
   }
   return j
-};
+}
 
 // @lc code=end
-

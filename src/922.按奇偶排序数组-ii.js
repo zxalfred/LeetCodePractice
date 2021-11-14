@@ -9,7 +9,7 @@
  * @param {number[]} A
  * @return {number[]}
  */
-var sortArrayByParityII = function(A) {
+const sortArrayByParityII = function (A) {
   const len = A.length
   const evenArr = []
   const oddArr = []
@@ -21,10 +21,9 @@ var sortArrayByParityII = function(A) {
       oddArr.push(i)
     }
   }
-  for (let i = 0; i < len/2; i++) {
+  for (let i = 0; i < len / 2; i++) {
     result.push(A[evenArr[i]], A[oddArr[i]])
   }
   return result
-};
+}
 // @lc code=end
-

@@ -22,7 +22,7 @@ const reverseList = (node) => {
   let curr = node
 
   while (curr) {
-    const next = curr.next
+    const { next } = curr
     curr.next = prev
     prev = curr
     curr = next
@@ -31,7 +31,7 @@ const reverseList = (node) => {
   return prev
 }
 
-var reverseKGroup = function(head, k) {
+var reverseKGroup = function (head, k) {
   if (!head || !head.next || k === 1) return head
 
   let tail = head
@@ -45,12 +45,11 @@ var reverseKGroup = function(head, k) {
     }
   }
 
-  const next = tail.next
+  const { next } = tail
   tail.next = null
   const result = reverseList(head)
   head.next = reverseKGroup(next, k)
 
   return result
-};
+}
 // @lc code=end
-

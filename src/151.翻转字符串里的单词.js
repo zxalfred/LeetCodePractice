@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {string}
  */
-var reverseWords = function(s) {
+const reverseWords = function (s) {
   s = s.trim()
   if (!s.length) return ''
   let result = []
@@ -29,6 +29,5 @@ var reverseWords = function(s) {
   result = result.reverse()
 
   return result.join(' ')
-};
+}
 // @lc code=end
-

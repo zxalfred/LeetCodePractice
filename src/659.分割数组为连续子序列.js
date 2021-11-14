@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var isPossible = function(nums) {
+const isPossible = function (nums) {
   const countMap = new Map()
   const endMap = new Map()
 
@@ -36,8 +36,7 @@ var isPossible = function(nums) {
   }
 
   return true
-};
+}
 
-console.log(isPossible([1,2,3,4,4,5]))
+console.log(isPossible([1, 2, 3, 4, 4, 5]))
 // @lc code=end
-

@@ -11,8 +11,8 @@
  * @param {number} k
  * @return {number}
  */
-const minDays = function(bloomDay, m, k) {
-  const length = bloomDay.length
+const minDays = function (bloomDay, m, k) {
+  const { length } = bloomDay
   if (m * k > length) return -1
   let l = Infinity
   let r = 0
@@ -37,9 +37,9 @@ const minDays = function(bloomDay, m, k) {
     }
     return count >= m
   }
-  
+
   while (l < r) {
-    let mid = ~~((l + r) >> 1)
+    const mid = ~~((l + r) >> 1)
     if (check(mid)) {
       r = mid
     } else {
@@ -48,7 +48,6 @@ const minDays = function(bloomDay, m, k) {
   }
 
   return l
-};
+}
 
 // @lc code=end
-

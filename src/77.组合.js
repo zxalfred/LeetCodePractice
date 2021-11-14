@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {number[][]}
  */
-var combine = function(n, k) {
+const combine = function (n, k) {
   const result = []
 
   const backtrack = (arr, cur, left) => {
@@ -30,7 +30,6 @@ var combine = function(n, k) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

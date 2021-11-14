@@ -10,7 +10,7 @@
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum = function(candidates, target) {
+const combinationSum = function (candidates, target) {
   const result = []
   const backtracking = (arr, sum) => {
     if (sum === target) {
@@ -19,14 +19,12 @@ var combinationSum = function(candidates, target) {
     }
     if (sum > target) return
     for (const item of candidates) {
-      if (!arr.length || item >= arr[arr.length - 1])
-      backtracking(arr.concat(item), sum + item)
+      if (!arr.length || item >= arr[arr.length - 1]) backtracking(arr.concat(item), sum + item)
     }
   }
 
   backtracking([], 0)
 
   return result
-};
+}
 // @lc code=end
-

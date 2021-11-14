@@ -9,7 +9,7 @@
  * @param {number[]} A
  * @return {boolean}
  */
-var canThreePartsEqualSum = function(A) {
+const canThreePartsEqualSum = function (A) {
   const target = A.reduce((a, b) => a + b) / 3
   if (target % 1) return false
   const l = A.length
@@ -35,7 +35,6 @@ var canThreePartsEqualSum = function(A) {
   if (i >= l - 1) return false
 
   return true
-};
+}
 
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {number} n
  * @return {number}
  */
-var leastInterval = function(tasks, n) {
+const leastInterval = function (tasks, n) {
   const map = new Map()
   let max = 0
   let maxCount = 0
@@ -18,7 +18,7 @@ var leastInterval = function(tasks, n) {
     map.set(x, (map.get(x) || 0) + 1)
   }
 
-  for (const [,val] of map) {
+  for (const [, val] of map) {
     if (val > max) {
       max = val
       maxCount = 1
@@ -28,6 +28,5 @@ var leastInterval = function(tasks, n) {
   }
 
   return Math.max((max - 1) * (n + 1) + maxCount, tasks.length)
-};
+}
 // @lc code=end
-

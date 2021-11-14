@@ -22,6 +22,7 @@ class DoubleLinkedList {
     this.tail.prev = this.head
     this.size = 0
   }
+
   addFirst(node) {
     this.head.next.prev = node
     node.next = this.head.next
@@ -29,10 +30,12 @@ class DoubleLinkedList {
     node.prev = this.head
     this.size++
   }
+
   removeTail() {
     if (this.tail.prev === this.head) return
     return this.remove(this.tail.prev)
   }
+
   remove(node) {
     if (!node) return
     node.prev.next = node.next
@@ -45,31 +48,31 @@ class DoubleLinkedList {
 /**
  * @param {number} capacity
  */
-var LRUCache = function(capacity) {
+const LRUCache = function (capacity) {
   this.capacity = capacity
   this.map = new Map()
   this.cache = new DoubleLinkedList()
-};
+}
 
-/** 
+/**
  * @param {number} key
  * @return {number}
  */
-LRUCache.prototype.get = function(key) {
+LRUCache.prototype.get = function (key) {
   const node = this.map.get(key)
   if (node) {
     this.put(key, node.val)
     return node.val
   }
   return -1
-};
+}
 
-/** 
- * @param {number} key 
+/**
+ * @param {number} key
  * @param {number} value
  * @return {void}
  */
-LRUCache.prototype.put = function(key, value) {
+LRUCache.prototype.put = function (key, value) {
   const node = new Node(key, value)
   const old = this.map.get(key)
   if (old) {
@@ -80,8 +83,7 @@ LRUCache.prototype.put = function(key, value) {
   }
   this.map.set(key, node)
   this.cache.addFirst(node)
-};
-
+}
 
 /**
  * Your LRUCache object will be instantiated and called as such:
@@ -90,4 +92,3 @@ LRUCache.prototype.put = function(key, value) {
  * obj.put(key,value)
  */
 // @lc code=end
-

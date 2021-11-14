@@ -2,7 +2,7 @@
  * @param {string} S
  * @return {string}
  */
-var compressString = function(S) {
+const compressString = function (S) {
   const len = S.length
   if (len < 2) return S
   let prevVal = null
@@ -26,4 +26,4 @@ var compressString = function(S) {
   result += prevCount
 
   return result.length < S.length ? result : S
-};
+}

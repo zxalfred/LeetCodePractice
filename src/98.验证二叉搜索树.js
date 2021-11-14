@@ -19,7 +19,7 @@
 
 // var isValidBST = function(root) {
 //   let pre = -Infinity
-  
+
 //   const inorder = (node) => {
 //     if (node === null) return true
 
@@ -33,13 +33,12 @@
 
 //     return true
 //   }
-  
+
 //   return inorder(root)
 // };
 
-var isValidBST = function(root) {
-
-  var validate = function(node, min, max) {
+const isValidBST = function (root) {
+  var validate = function (node, min, max) {
     if (!node) return true
 
     const { val } = node
@@ -55,4 +54,3 @@ var isValidBST = function(root) {
   return validate(root)
 }
 // @lc code=end
-

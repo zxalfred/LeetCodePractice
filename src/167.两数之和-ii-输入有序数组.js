@@ -10,7 +10,7 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(numbers, target) {
+const twoSum = function (numbers, target) {
   let i = 0
   let j = numbers.length - 1
 
@@ -22,6 +22,5 @@ var twoSum = function(numbers, target) {
   }
 
   return null
-};
+}
 // @lc code=end
-

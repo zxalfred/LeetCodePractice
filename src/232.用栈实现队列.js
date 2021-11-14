@@ -5,25 +5,25 @@
  */
 
 // @lc code=start
-var MyQueue = function() {
+const MyQueue = function () {
   this.inputStack = []
   this.outputStack = []
-};
+}
 
 /**
- * Push element x to the back of queue. 
+ * Push element x to the back of queue.
  * @param {number} x
  * @return {void}
  */
-MyQueue.prototype.push = function(x) {
+MyQueue.prototype.push = function (x) {
   this.inputStack.push(x)
-};
+}
 
 /**
  * Removes the element from in front of queue and returns that element.
  * @return {number}
  */
-MyQueue.prototype.pop = function() {
+MyQueue.prototype.pop = function () {
   if (this.outputStack.length === 0) {
     while (this.inputStack.length) {
       const temp = this.inputStack.pop()
@@ -32,13 +32,13 @@ MyQueue.prototype.pop = function() {
   }
 
   return this.outputStack.pop()
-};
+}
 
 /**
  * Get the front element.
  * @return {number}
  */
-MyQueue.prototype.peek = function() {
+MyQueue.prototype.peek = function () {
   if (this.outputStack.length === 0) {
     while (this.inputStack.length) {
       const temp = this.inputStack.pop()
@@ -47,15 +47,15 @@ MyQueue.prototype.peek = function() {
   }
 
   return this.outputStack[this.outputStack.length - 1]
-};
+}
 
 /**
  * Returns whether the queue is empty.
  * @return {boolean}
  */
-MyQueue.prototype.empty = function() {
+MyQueue.prototype.empty = function () {
   return this.inputStack.length === 0 && this.outputStack.length === 0
-};
+}
 
 /**
  * Your MyQueue object will be instantiated and called as such:
@@ -66,4 +66,3 @@ MyQueue.prototype.empty = function() {
  * var param_4 = obj.empty()
  */
 // @lc code=end
-

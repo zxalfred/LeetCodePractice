@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {string}
  */
-var removeDuplicateLetters = function(s) {
+const removeDuplicateLetters = function (s) {
   const l = s.length
   if (l < 2) return s
   const stack = [s[0]]
@@ -42,7 +42,6 @@ var removeDuplicateLetters = function(s) {
     set.add(s[i])
   }
   return stack.join('')
-};
+}
 
 // @lc code=end
-

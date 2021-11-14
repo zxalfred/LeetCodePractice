@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var isNumber = function(s) {
+const isNumber = function (s) {
   const str = s.trim()
   if (!str) return false
   const memo = [
@@ -56,7 +56,6 @@ var isNumber = function(s) {
     if (status === -1) return false
   }
   return status === 2 || status === 3 || status === 7
-};
+}
 
 // @lc code=end
-

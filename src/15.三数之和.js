@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var threeSum = function(nums) {
+const threeSum = function (nums) {
   if (nums.length < 3) return []
   const result = []
   nums.sort((a, b) => a - b)
@@ -51,4 +51,3 @@ var threeSum = function(nums) {
 }
 
 // @lc code=end
-

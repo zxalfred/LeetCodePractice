@@ -10,7 +10,7 @@
  * @param {number} duration
  * @return {number}
  */
-var findPoisonedDuration = function(timeSeries, duration) {
+const findPoisonedDuration = function (timeSeries, duration) {
   let result = 0
   let prev = 0
   for (const time of timeSeries) {
@@ -24,7 +24,6 @@ var findPoisonedDuration = function(timeSeries, duration) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

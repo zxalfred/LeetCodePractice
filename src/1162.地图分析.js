@@ -9,11 +9,11 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var maxDistance = function(grid) {
+const maxDistance = function (grid) {
   const len = grid.length
   const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
   let max = -1
-  let queue = []
+  const queue = []
 
   const bfs = () => {
     while (queue.length) {
@@ -27,7 +27,7 @@ var maxDistance = function(grid) {
           const y = j + item[1]
           if (
             x >= 0 && x < len
-            && y >=0 && y < len
+            && y >= 0 && y < len
             && grid[x][y] === 0
           ) {
             const val = grid[i][j] + 1
@@ -51,6 +51,5 @@ var maxDistance = function(grid) {
   bfs()
 
   return max === -1 ? -1 : max - 1
-};
+}
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {string} t
  * @return {string}
  */
-var minWindow = function(s, t) {
+const minWindow = function (s, t) {
   const tMap = new Map()
   const curMap = new Map()
   let resultL
@@ -50,7 +50,6 @@ var minWindow = function(s, t) {
 
   if (resultL === undefined) return ''
   return s.substring(resultL, resultR + 1)
-};
+}
 
 // @lc code=end
-

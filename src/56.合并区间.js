@@ -9,7 +9,7 @@
  * @param {number[][]} intervals
  * @return {number[][]}
  */
-var merge = function(intervals) {
+const merge = function (intervals) {
   const result = []
   intervals = intervals.sort((a, b) => a[0] - b[0])
   let curr
@@ -18,18 +18,15 @@ var merge = function(intervals) {
       curr = item
     } else if (curr[1] >= item[0]) {
       curr[1] = Math.max(curr[1], item[1])
+    } else if (curr[1] >= item[0]) {
+      curr[1] = Math.max(curr[1], item[1])
     } else {
-      if (curr[1] >= item[0]) {
-        curr[1] = Math.max(curr[1], item[1])
-      } else {
-        result.push(curr)
-        curr = item
-      }
+      result.push(curr)
+      curr = item
     }
   }
   if (curr) result.push(curr)
 
   return result
-};
+}
 // @lc code=end
-

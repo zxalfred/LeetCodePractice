@@ -17,7 +17,7 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var increasingBST = function(root) {
+const increasingBST = function (root) {
   if (!root) return null
   let curr = result = new TreeNode()
   function midOrderTraverse(node) {
@@ -29,7 +29,6 @@ var increasingBST = function(root) {
   }
   midOrderTraverse(root)
   return result.right
-};
+}
 
 // @lc code=end
-

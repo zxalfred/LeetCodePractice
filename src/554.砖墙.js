@@ -9,14 +9,14 @@
  * @param {number[][]} wall
  * @return {number}
  */
-var leastBricks = function(wall) {
+const leastBricks = function (wall) {
   const l = wall.length
   const map = new Map()
   for (let i = 0; i < l; i++) {
     const item = wall[i]
     let prev = 0
     for (let j = 0; j < item.length - 1; j++) {
-      prev = prev + item [j]
+      prev += item[j]
       const count = map.get(prev)
       map.set(prev, count ? count + 1 : 1)
     }
@@ -28,6 +28,5 @@ var leastBricks = function(wall) {
   }
 
   return l - result
-};
+}
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {string} str
  * @return {number}
  */
-var myAtoi = function(str) {
+const myAtoi = function (str) {
   const maxVal = 2147483647
   const minVal = -2147483648
   const resultArr = []
@@ -43,6 +43,5 @@ var myAtoi = function(str) {
   result = result > maxVal ? maxVal : result
   result = result < minVal ? minVal : result
   return result
-};
+}
 // @lc code=end
-

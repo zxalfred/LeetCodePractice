@@ -9,7 +9,7 @@
  * @param {number[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-var isAlive = function (board, i, j) {
+const isAlive = function (board, i, j) {
   let aliveNeibor = 0
   let val = board[i][j]
   for (let a = -1; a < 2; a++) {
@@ -20,7 +20,7 @@ var isAlive = function (board, i, j) {
       }
     }
   }
-  switch(aliveNeibor) {
+  switch (aliveNeibor) {
     case 2: {
       val = val
       break
@@ -36,10 +36,10 @@ var isAlive = function (board, i, j) {
   return val
 }
 
-var gameOfLife = function(board) {
+const gameOfLife = function (board) {
   const rowLength = board.length
   const colLength = board[0].length
-  
+
   const help = (board, i, j) => {
     if (i === rowLength || j === colLength) return
     const val = isAlive(board, i, j)
@@ -56,6 +56,5 @@ var gameOfLife = function(board) {
   }
 
   help(board, 0, 0)
-};
+}
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var lengthOfLIS = function(nums) {
+const lengthOfLIS = function (nums) {
   const l = nums.length
   if (l < 2) return l
 
@@ -27,6 +27,5 @@ var lengthOfLIS = function(nums) {
   }
 
   return result
-};
+}
 // @lc code=end
-

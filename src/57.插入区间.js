@@ -10,7 +10,7 @@
  * @param {number[]} newInterval
  * @return {number[][]}
  */
-var insert = function(intervals, newInterval) {
+const insert = function (intervals, newInterval) {
   if (!intervals.length) return [newInterval]
   const result = []
   let i
@@ -46,6 +46,5 @@ var insert = function(intervals, newInterval) {
   }
 
   return result
-};
+}
 // @lc code=end
-

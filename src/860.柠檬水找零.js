@@ -9,7 +9,7 @@
  * @param {number[]} bills
  * @return {boolean}
  */
-var lemonadeChange = function(bills) {
+const lemonadeChange = function (bills) {
   const map = new Map([[5, 0], [10, 0]])
 
   for (let i = 0; i < bills.length; i++) {
@@ -32,7 +32,6 @@ var lemonadeChange = function(bills) {
   }
 
   return true
-};
+}
 
 // @lc code=end
-

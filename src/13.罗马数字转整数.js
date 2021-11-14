@@ -10,7 +10,7 @@
  * @return {number}
  */
 const getVal = (s) => {
-  switch(s) {
+  switch (s) {
     case 'I': return 1
     case 'V': return 5
     case 'X': return 10
@@ -21,7 +21,7 @@ const getVal = (s) => {
     default: return 0
   }
 }
-var romanToInt = function(s) {
+const romanToInt = function (s) {
   let res = 0
   let prev = getVal(s[0])
   for (let i = 1; i < s.length; i++) {
@@ -37,4 +37,3 @@ var romanToInt = function(s) {
   return res
 }
 // @lc code=end
-

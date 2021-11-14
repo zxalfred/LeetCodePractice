@@ -9,7 +9,7 @@
  * @param {character[][]} matrix
  * @return {number}
  */
-var largestRectangleArea = function(heights) {
+const largestRectangleArea = function (heights) {
   const l = heights.length
   const stack = [0]
   const arr = [0, ...heights, 0]
@@ -32,7 +32,7 @@ var largestRectangleArea = function(heights) {
   }
   return result
 }
-var maximalRectangle = function(matrix) {
+const maximalRectangle = function (matrix) {
   const row = matrix.length
   if (!row) return 0
   const col = matrix[0].length
@@ -55,7 +55,6 @@ var maximalRectangle = function(matrix) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

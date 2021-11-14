@@ -19,7 +19,7 @@
  * @param {number} id
  * @return {number}
  */
-var GetImportance = function(employees, id) {
+const GetImportance = function (employees, id) {
   const map = new Map()
   const l = employees.length
   for (let i = 0; i < l; i++) {
@@ -29,13 +29,12 @@ var GetImportance = function(employees, id) {
   const recursion = (id) => {
     const item = map.get(id)
     result += item[0]
-    item[1].forEach(child => {
+    item[1].forEach((child) => {
       recursion(child)
     })
   }
   recursion(id)
   return result
-};
+}
 
 // @lc code=end
-

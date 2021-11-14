@@ -19,12 +19,12 @@
  * @param {number} high
  * @return {number}
  */
- var rangeSumBST = function(root, low, high) {
+const rangeSumBST = function (root, low, high) {
   if (!root) return 0
   let result = 0
   const traverse = (node) => {
     if (!node) return
-    const val = node.val
+    const { val } = node
     if (val >= low && val <= high) {
       result += val
     }
@@ -39,18 +39,17 @@
   }
   traverse(root)
   return result
-};
+}
 
 const tree = {
   val: 15,
   left: {
-    val: 9
+    val: 9,
   },
   right: {
-    val: 21
-  }
+    val: 21,
+  },
 }
 
-console.log(rangeSumBST(tree, 19 , 21))
+console.log(rangeSumBST(tree, 19, 21))
 // @lc code=end
-

@@ -18,7 +18,7 @@
  * @param {number} targetSum
  * @return {boolean}
  */
-var hasPathSum = function(root, targetSum) {
+const hasPathSum = function (root, targetSum) {
   if (!root) return false
   const backTrack = (node, sum) => {
     if (!node.left && !node.right) {
@@ -28,6 +28,5 @@ var hasPathSum = function(root, targetSum) {
   }
 
   return backTrack(root, 0)
-};
+}
 // @lc code=end
-

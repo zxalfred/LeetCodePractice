@@ -10,9 +10,9 @@
  * @param {number[]} arr2
  * @return {number[]}
  */
-var relativeSortArray = function(arr1, arr2) {
+const relativeSortArray = function (arr1, arr2) {
   const map = new Map()
-  
+
   for (let i = 0; i < arr2.length; i++) {
     map.set(arr2[i], i)
   }
@@ -22,14 +22,12 @@ var relativeSortArray = function(arr1, arr2) {
     const bIndex = map.get(b)
     if (aIndex !== undefined && bIndex != undefined) {
       return map.get(a) - map.get(b)
-    } else if (aIndex !== undefined) {
+    } if (aIndex !== undefined) {
       return -1
-    } else if (bIndex !== undefined) {
+    } if (bIndex !== undefined) {
       return 1
-    } else {
-      return a - b
     }
+    return a - b
   })
-};
+}
 // @lc code=end
-

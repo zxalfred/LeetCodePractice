@@ -9,8 +9,8 @@
  * @param {number} n
  * @return {number}
  */
-var getMoneyAmount = function(n) {
-  const dp = Array.from({length: n + 1}, () => new Array(n + 1).fill(0))
+const getMoneyAmount = function (n) {
+  const dp = Array.from({ length: n + 1 }, () => new Array(n + 1).fill(0))
 
   for (let i = n - 1; i > 0; i--) {
     for (let j = i + 1; j <= n; j++) {
@@ -23,7 +23,6 @@ var getMoneyAmount = function(n) {
   }
 
   return dp[1][n]
-};
+}
 
 // @lc code=end
-

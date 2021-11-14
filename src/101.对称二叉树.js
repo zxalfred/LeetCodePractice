@@ -17,7 +17,7 @@
  * @return {boolean}
  */
 // var isSymmetric = function(root) {
-//   if (root === null) return true 
+//   if (root === null) return true
 //   const isMirror = function(left ,right) {
 //     if (left === null && right === null) return true
 //     if (left === null || right === null) return false
@@ -31,7 +31,7 @@
 //   return isMirror(root.left, root.right)
 // };
 
-var isSymmetric = function(root) {
+const isSymmetric = function (root) {
   if (!root) return true
 
   const queue = [root.left, root.right]
@@ -52,4 +52,3 @@ var isSymmetric = function(root) {
 }
 
 // @lc code=end
-

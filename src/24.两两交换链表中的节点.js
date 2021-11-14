@@ -16,14 +16,13 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var swapPairs = function(head) {
+var swapPairs = function (head) {
   if (!head || !head.next) return head
-  
+
   const newNode = swapPairs(head.next.next)
   const second = head.next
   second.next = head
   head.next = newNode
   return second
-};
+}
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
+const groupAnagrams = function (strs) {
   if (!strs.length) return []
   const map = new Map()
   const result = []
@@ -33,4 +33,3 @@ var groupAnagrams = function(strs) {
   return result
 }
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {number}
  */
-var subarraySum = function(nums, k) {
+const subarraySum = function (nums, k) {
   const map = new Map([[0, 1]])
   let result = 0
   let sum = 0
@@ -28,6 +28,5 @@ var subarraySum = function(nums, k) {
   }
 
   return result
-};
+}
 // @lc code=end
-

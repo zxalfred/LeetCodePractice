@@ -9,12 +9,12 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
+const isValid = function (s) {
   const l = s.length
   const map = new Map([
     [')', '('],
     [']', '['],
-    ['}', '{']
+    ['}', '{'],
   ])
   const stack = []
 
@@ -29,6 +29,5 @@ var isValid = function(s) {
   }
 
   return !stack.length
-};
+}
 // @lc code=end
-

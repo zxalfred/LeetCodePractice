@@ -10,7 +10,7 @@
  * @param {number} difference
  * @return {number}
  */
-var longestSubsequence = function(arr, difference) {
+const longestSubsequence = function (arr, difference) {
   const l = arr.length
   let result = 1
   const map = new Map([[arr[0], 1]])
@@ -21,7 +21,6 @@ var longestSubsequence = function(arr, difference) {
     result = Math.max(result, val)
   }
   return result
-};
+}
 
 // @lc code=end
-

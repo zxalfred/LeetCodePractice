@@ -9,7 +9,7 @@
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var spiralOrder = function(matrix) {
+const spiralOrder = function (matrix) {
   const result = []
   const row = matrix.length
   const col = matrix[0].length
@@ -18,7 +18,7 @@ var spiralOrder = function(matrix) {
   let m2 = row - 1
   let n1 = 0
   let n2 = col - 1
-  
+
   while (m1 <= m2 && n1 <= n2) {
     let i = m1
     let j = n1
@@ -53,7 +53,6 @@ var spiralOrder = function(matrix) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

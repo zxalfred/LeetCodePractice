@@ -17,7 +17,7 @@
  * @param {ListNode} head
  * @return {boolean}
  */
- var hasCycle = function(head) {
+const hasCycle = function (head) {
   if (!head || !head.next) return false
   let fast = head.next
   let slow = head
@@ -30,6 +30,5 @@
   }
 
   return false
-};
+}
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {number}
  */
-var longestPalindrome = function(s) {
+const longestPalindrome = function (s) {
   const set = new Set()
 
   for (let i = 0; i < s.length; i++) {
@@ -22,9 +22,7 @@ var longestPalindrome = function(s) {
 
   if (set.size === 0) {
     return s.length
-  } else {
-    return (s.length - set.size) + 1
   }
-};
+  return (s.length - set.size) + 1
+}
 // @lc code=end
-

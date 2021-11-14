@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var moveZeroes = function(nums) {
+const moveZeroes = function (nums) {
   const l = nums.length
   let i = 0 // 前探
   let j = 0 // 后置
@@ -26,8 +26,6 @@ var moveZeroes = function(nums) {
     nums[j] = 0
     j++
   }
-
-};
+}
 
 // @lc code=end
-

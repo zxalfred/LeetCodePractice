@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var merge = function(left, right) {
+const merge = function (left, right) {
   const result = []
   let i = 0
   let j = 0
@@ -26,12 +26,11 @@ var merge = function(left, right) {
 
   if (i === left.length) {
     return result.concat(right.slice(j))
-  } else {
-    return result.concat(left.slice(i))
   }
+  return result.concat(left.slice(i))
 }
 
-var sortArray1 = function(nums) {
+const sortArray1 = function (nums) {
   if (nums.length < 2) return nums
   const middle = nums.length >> 1
   const left = nums.slice(0, middle)
@@ -66,11 +65,10 @@ const quickSort = (arr, left = 0, right = arr.length - 1) => {
   quickSort(arr, index + 1, right)
 }
 
-var sortArray2 = function(nums) {
+const sortArray2 = function (nums) {
   quickSort(nums)
   return nums
 }
 
-console.log(sortArray2([5,1,1,2,0,0]))
+console.log(sortArray2([5, 1, 1, 2, 0, 0]))
 // @lc code=end
-

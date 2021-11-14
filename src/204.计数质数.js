@@ -9,7 +9,7 @@
  * @param {number} n
  * @return {number}
  */
-var countPrimes = function(n) {
+const countPrimes = function (n) {
   if (n <= 2) return 0
   let count = 1
   for (let i = 3; i < n; i++) {
@@ -23,8 +23,7 @@ var countPrimes = function(n) {
     }
     if (isPrime) count++
   }
-  
-  return count
-};
-// @lc code=end
 
+  return count
+}
+// @lc code=end

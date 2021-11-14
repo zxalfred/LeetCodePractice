@@ -10,7 +10,7 @@
  * @param {string} t
  * @return {boolean}
  */
-var isAnagram = function(s, t) {
+const isAnagram = function (s, t) {
   const sMap = new Map()
   const tMap = new Map()
 
@@ -36,6 +36,5 @@ var isAnagram = function(s, t) {
     if (sMap.get(key) !== tMap.get(key)) return false
   }
   return true
-};
+}
 // @lc code=end
-

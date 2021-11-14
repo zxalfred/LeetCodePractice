@@ -1,4 +1,4 @@
-var movingCount = function(m, n, k) {
+const movingCount = function (m, n, k) {
   let res = 1
   const visited = []
   const diff = [[0, 1], [0, -1], [1, 0], [-1, 0]]
@@ -14,8 +14,8 @@ var movingCount = function(m, n, k) {
 
       if (
         x >= 0 && x < m
-        && y >=0 && y <n
-        && ((~~(x/10) + x%10 + ~~(y/10) + y%10) <= k)
+        && y >= 0 && y < n
+        && ((~~(x / 10) + x % 10 + ~~(y / 10) + y % 10) <= k)
         && visited[x][y] !== true
       ) {
         visited[x][y] = true
@@ -27,4 +27,4 @@ var movingCount = function(m, n, k) {
 
   dfs(0, 0)
   return res
-};
+}

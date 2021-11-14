@@ -9,7 +9,7 @@
  * @param {number[]} citations
  * @return {number}
  */
-var hIndex = function(citations) {
+const hIndex = function (citations) {
   const l = citations.length
   if (!l) return 0
   let left = 0
@@ -25,7 +25,6 @@ var hIndex = function(citations) {
   }
 
   return l - left
-};
+}
 
 // @lc code=end
-

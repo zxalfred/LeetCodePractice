@@ -10,12 +10,11 @@
  * @param {number} start
  * @return {number}
  */
-var xorOperation = function(n, start) {
+const xorOperation = function (n, start) {
   let result = start
-  for(let i = 1; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     result ^= (2 * i + start)
   }
   return result
-};
+}
 // @lc code=end
-

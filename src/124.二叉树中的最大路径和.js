@@ -17,14 +17,14 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var maxPathSum = function(root) {
+const maxPathSum = function (root) {
   let result = -Infinity
   const findMax = (node) => {
     if (!node) return 0
-  
+
     const maxLeft = Math.max(0, findMax(node.left))
-    const maxRight = Math.max(0 , findMax(node.right))
-    const val =  node.val + maxLeft + maxRight
+    const maxRight = Math.max(0, findMax(node.right))
+    const val = node.val + maxLeft + maxRight
     result = Math.max(result, val)
     return node.val + Math.max(maxLeft, maxRight)
   }
@@ -32,7 +32,6 @@ var maxPathSum = function(root) {
   findMax(root)
 
   return result
-};
+}
 
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {number}
  */
-var numDecodings = function(s) {
+const numDecodings = function (s) {
   if (s[0] === '0') return 0
   const l = s.length
   const dp = new Array(l)
@@ -28,7 +28,6 @@ var numDecodings = function(s) {
     }
   }
   return dp[l - 1][0] + dp[l - 1][1]
-};
+}
 
 // @lc code=end
-

@@ -10,7 +10,7 @@
  * @param {number} num_people
  * @return {number[]}
  */
-var distributeCandies = function(candies, num_people) {
+const distributeCandies = function (candies, num_people) {
   let index = 0
   let now = 1
   let left = candies
@@ -32,6 +32,5 @@ var distributeCandies = function(candies, num_people) {
   }
 
   return arr
-};
+}
 // @lc code=end
-

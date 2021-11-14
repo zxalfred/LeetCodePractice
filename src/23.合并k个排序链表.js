@@ -69,7 +69,7 @@
 //   return head
 // };
 // 递归 + 分治
-var mergeKLists = (lists) => {
+const mergeKLists = (lists) => {
   const len = lists.length
   if (len === 0) return null
 
@@ -79,10 +79,9 @@ var mergeKLists = (lists) => {
     if (l1.val <= l2.val) {
       l1.next = mergeTwoList(l1.next, l2)
       return l1
-    } else {
-      l2.next = mergeTwoList(l1, l2.next)
-      return l2
     }
+    l2.next = mergeTwoList(l1, l2.next)
+    return l2
   }
 
   const merge = (left, right) => {
@@ -94,4 +93,3 @@ var mergeKLists = (lists) => {
   return merge(0, len - 1)
 }
 // @lc code=end
-

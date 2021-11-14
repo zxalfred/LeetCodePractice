@@ -10,7 +10,7 @@
  * @param {string[]} words
  * @return {number[]}
  */
-var findSubstring = function(s, words) {
+const findSubstring = function (s, words) {
   if (!words.length) return []
   const map = new Map()
   const sLen = s.length
@@ -43,6 +43,5 @@ var findSubstring = function(s, words) {
   }
 
   return result
-};
+}
 // @lc code=end
-

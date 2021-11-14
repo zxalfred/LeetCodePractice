@@ -10,7 +10,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var wordPattern = function(pattern, s) {
+const wordPattern = function (pattern, s) {
   const str = s.split(' ')
   const map = new Map()
   if (pattern.length !== str.length) return false
@@ -20,12 +20,11 @@ var wordPattern = function(pattern, s) {
     } else if (map.get(pattern[i]) !== str[i]) return false
   }
   const set = new Set()
-  for (const [,val] of map) {
+  for (const [, val] of map) {
     if (set.has(val)) return false
     set.add(val)
   }
 
   return true
-};
+}
 // @lc code=end
-

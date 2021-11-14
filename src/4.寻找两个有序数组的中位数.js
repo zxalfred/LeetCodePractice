@@ -10,7 +10,7 @@
  * @param {number[]} nums2
  * @return {number}
  */
-var findMedianSortedArrays = function(A, B) {
+const findMedianSortedArrays = function (A, B) {
   let m = A.length
   let n = B.length
   // 保持 m <= n
@@ -25,8 +25,8 @@ var findMedianSortedArrays = function(A, B) {
   let iMin = 0
   let iMax = m
   while (iMin <= iMax) {
-    let i = (iMin + iMax) >> 1
-    let j = ((m + n + 1) >> 1) - i
+    const i = (iMin + iMax) >> 1
+    const j = ((m + n + 1) >> 1) - i
     if (i < iMax && B[j - 1] > A[i]) {
       iMin = i + 1
     } else if (i > iMin && A[i - 1] > B[j]) {
@@ -42,7 +42,7 @@ var findMedianSortedArrays = function(A, B) {
       }
 
       if ((m + n) & 1) return maxLeft
- 
+
       let minRight
       if (i === m) {
         minRight = B[j]
@@ -57,6 +57,5 @@ var findMedianSortedArrays = function(A, B) {
   }
 
   return 0
-};
+}
 // @lc code=end
-

@@ -9,9 +9,9 @@
  * @param {number} numRows
  * @return {number[][]}
  */
-var generate = function(numRows) {
+const generate = function (numRows) {
   if (numRows === 0) return []
-  let result = [[1]]
+  const result = [[1]]
 
   for (let i = 1; i < numRows; i++) {
     const currArr = [1]
@@ -28,9 +28,8 @@ var generate = function(numRows) {
   }
 
   return result
-};
+}
 
 console.log(generate(1))
 
 // @lc code=end
-

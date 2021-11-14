@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permuteUnique = function(nums) {
+const permuteUnique = function (nums) {
   const len = nums.length
   if (len === 1) return [nums]
   const result = []
@@ -38,7 +38,6 @@ var permuteUnique = function(nums) {
   backtrack([])
 
   return result
-};
+}
 
 // @lc code=end
-

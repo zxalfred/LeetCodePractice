@@ -9,7 +9,7 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
+const isPalindrome = function (x) {
   x = String(x)
   if (x < 0) return false
 
@@ -23,6 +23,5 @@ var isPalindrome = function(x) {
   }
 
   return true
-};
+}
 // @lc code=end
-

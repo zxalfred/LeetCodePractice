@@ -9,7 +9,7 @@
  * @param {number[]} stones
  * @return {number}
  */
-var lastStoneWeight = function(stones) {
+const lastStoneWeight = function (stones) {
   if (stones.length === 1) return stones[0]
   stones = stones.sort((a, b) => b - a)
   while (stones.length > 1) {
@@ -27,7 +27,6 @@ var lastStoneWeight = function(stones) {
     }
   }
   return stones[0] || 0
-};
+}
 
 // @lc code=end
-

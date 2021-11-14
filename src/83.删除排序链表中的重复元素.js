@@ -16,7 +16,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function(head) {
+const deleteDuplicates = function (head) {
   if (!head || !head.next) return head
 
   let prev = head
@@ -32,6 +32,5 @@ var deleteDuplicates = function(head) {
   }
 
   return head
-};
+}
 // @lc code=end
-

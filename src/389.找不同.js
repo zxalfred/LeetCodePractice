@@ -10,7 +10,7 @@
  * @param {string} t
  * @return {character}
  */
-var findTheDifference = function(s, t) {
+const findTheDifference = function (s, t) {
   const map = new Map()
   for (let i = 0, l = s.length; i < l; i++) {
     map.set(s[i], (map.get(s[i]) || 0) + 1)
@@ -19,10 +19,8 @@ var findTheDifference = function(s, t) {
     const count = (map.get(t[i]) || 0) - 1
     if (count < 0) {
       return t[i]
-    } else {
-      map.set(t[i], count)
     }
+    map.set(t[i], count)
   }
-};
+}
 // @lc code=end
-

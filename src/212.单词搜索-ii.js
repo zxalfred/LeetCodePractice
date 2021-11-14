@@ -28,12 +28,12 @@ class Trie {
   }
 }
 
-var findWords = function(board, words) {
+const findWords = function (board, words) {
   if (!words.length || !board.length || !board[0].length) return []
 
   const result = new Set()
   const trie = new Trie()
-  for (let word of words) trie.insert(word)
+  for (const word of words) trie.insert(word)
 
   const dfs = (node, word, row, col) => {
     const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
@@ -45,11 +45,11 @@ var findWords = function(board, words) {
     for (const diff of xyDiff) {
       const nextRow = row + diff[0]
       const nextCol = col + diff[1]
-      if (nextRow >=0 && nextRow < board.length
-        && nextCol >=0 && nextCol < board[0].length
+      if (nextRow >= 0 && nextRow < board.length
+        && nextCol >= 0 && nextCol < board[0].length
       ) {
         const nextVal = board[nextRow][nextCol]
-        if ( nextVal !== '' && node[nextVal]) {
+        if (nextVal !== '' && node[nextVal]) {
           dfs(node[nextVal], word + nextVal, nextRow, nextCol)
         }
       }
@@ -57,7 +57,6 @@ var findWords = function(board, words) {
     board[row][col] = temp
   }
 
-  
   for (let row = 0; row < board.length; row++) {
     for (let col = 0; col < board[0].length; col++) {
       const letter = board[row][col]
@@ -68,6 +67,5 @@ var findWords = function(board, words) {
   }
 
   return [...result]
-};
+}
 // @lc code=end
-

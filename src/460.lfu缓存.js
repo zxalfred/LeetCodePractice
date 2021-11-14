@@ -83,7 +83,7 @@ class LFUCache {
   }
 
   incFreq(node) {
-    let freq = node.freq
+    const { freq } = node
     let linkedList = this.freqMap.get(freq)
     linkedList.removeNode(node)
     if (freq === this.minFreq && linkedList.head.post === linkedList.tail) {
@@ -97,7 +97,6 @@ class LFUCache {
     }
     linkedList.addNode(node)
   }
-
 }
 
 /**
@@ -107,4 +106,3 @@ class LFUCache {
  * obj.put(key,value)
  */
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+const maxProfit = function (prices) {
   let result = 0
   let prevMin = Infinity
   for (const val of prices) {
@@ -21,6 +21,5 @@ var maxProfit = function(prices) {
   }
 
   return result
-};
+}
 // @lc code=end
-

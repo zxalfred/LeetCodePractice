@@ -9,11 +9,11 @@
  * @param {string} s
  * @return {number}
  */
-var longestValidParentheses = function(s) {
+const longestValidParentheses = function (s) {
   let max = 0
   const dp = new Array(s.length)
 
-  for(let i = 1; i < s.length; i++) {
+  for (let i = 1; i < s.length; i++) {
     if (s[i] === ')') {
       if (s[i - 1] === '(') {
         dp[i] = (dp[i - 2] || 0) + 2
@@ -24,6 +24,5 @@ var longestValidParentheses = function(s) {
     }
   }
   return max
-};
+}
 // @lc code=end
-

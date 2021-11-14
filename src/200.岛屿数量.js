@@ -49,7 +49,7 @@
 // };
 
 // BFS
-var numIslands = function(grid) {
+const numIslands = function (grid) {
   const rowLen = grid.length
   const colLen = grid[0] ? grid[0].length : 0
   if (!rowLen || !colLen) return 0
@@ -62,15 +62,15 @@ var numIslands = function(grid) {
       const u = queue.pop().split(',')
       const i = Number(u[0])
       const j = Number(u[1])
-      grid[i][j] = "2"
+      grid[i][j] = '2'
       for (const diff of xyDiff) {
         const x = i + diff[0]
         const y = j + diff[1]
         if (
-          x >=0 && x < rowLen
-          && y >=0 && y < colLen
-          && grid[x][y] !== "2"
-          && grid[x][y] !== "0"
+          x >= 0 && x < rowLen
+          && y >= 0 && y < colLen
+          && grid[x][y] !== '2'
+          && grid[x][y] !== '0'
         ) {
           queue.push(`${x},${y}`)
         }
@@ -80,7 +80,7 @@ var numIslands = function(grid) {
 
   for (let i = 0; i < rowLen; i++) {
     for (let j = 0; j < colLen; j++) {
-      if (grid[i][j] === "1") {
+      if (grid[i][j] === '1') {
         result++
         bfs([`${i},${j}`])
       }
@@ -90,4 +90,3 @@ var numIslands = function(grid) {
   return result
 }
 // @lc code=end
-

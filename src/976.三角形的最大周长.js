@@ -9,7 +9,7 @@
  * @param {number[]} A
  * @return {number}
  */
-var largestPerimeter = function(A) {
+const largestPerimeter = function (A) {
   const arr = A.sort((a, b) => a - b)
   const len = arr.length
 
@@ -20,7 +20,6 @@ var largestPerimeter = function(A) {
   }
 
   return 0
-};
+}
 
 // @lc code=end
-

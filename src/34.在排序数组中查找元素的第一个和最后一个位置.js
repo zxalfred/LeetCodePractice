@@ -10,22 +10,21 @@
  * @param {number} target
  * @return {number[]}
  */
-var searchRange = function(nums, target) {
+const searchRange = function (nums, target) {
   const help = (left, right) => {
     if (left > right) return -1
     const mid = left + ((right - left) >> 1)
     if (nums[mid] === target) return mid
     if (nums[mid] > target) {
       return help(left, mid - 1)
-    } else{
-      return help(mid + 1, right)
     }
+    return help(mid + 1, right)
   }
 
   const index = help(0, nums.length - 1)
   if (index === -1) return [-1, -1]
   let i = index - 1
-  while(i >=0 && nums[i] === target) {
+  while (i >= 0 && nums[i] === target) {
     i--
   }
   i++
@@ -35,6 +34,5 @@ var searchRange = function(nums, target) {
   }
   j--
   return [i, j]
-};
+}
 // @lc code=end
-

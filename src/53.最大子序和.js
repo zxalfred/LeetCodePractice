@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
- var maxSubArray = function(nums) {
+const maxSubArray = function (nums) {
   if (nums.length === 1) return nums[0]
   let result = nums[0]
   let prev = nums[0]
@@ -18,6 +18,5 @@
     result = Math.max(prev, result)
   }
   return result
-};
+}
 // @lc code=end
-

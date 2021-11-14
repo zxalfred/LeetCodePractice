@@ -9,7 +9,7 @@
  * @param {number[][]} points
  * @return {number}
  */
-var findMinArrowShots = function(points) {
+const findMinArrowShots = function (points) {
   const arr = points.sort((a, b) => a[0] - b[0])
   let prevTail = -Infinity
   let result = 0
@@ -24,6 +24,5 @@ var findMinArrowShots = function(points) {
   }
 
   return result
-};
+}
 // @lc code=end
-

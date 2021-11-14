@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {string}
  */
-var reverseStr = function(s, k) {
+const reverseStr = function (s, k) {
   if (k === 1) return s
   let result = ''
   let i = 0
@@ -18,7 +18,7 @@ var reverseStr = function(s, k) {
   while (i + k * 2 - 1 < s.length) {
     const mid = i + k
     result += s.substring(i, mid).split('').reverse().join('')
-    i = i + k * 2
+    i += k * 2
     result += s.substring(mid, i)
   }
   if (i < s.length) {
@@ -31,7 +31,6 @@ var reverseStr = function(s, k) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

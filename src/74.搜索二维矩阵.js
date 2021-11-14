@@ -10,13 +10,13 @@
  * @param {number} target
  * @return {boolean}
  */
-var searchMatrix = function(matrix, target) {
+const searchMatrix = function (matrix, target) {
   const row = matrix.length
   if (!row) return false
   const col = matrix[0].length
   if (!col) return false
   let currRow = []
-  const heads = matrix.map(arr => arr[0])
+  const heads = matrix.map((arr) => arr[0])
   let left = 0
   let right = row - 1
   if (heads[left] === target || heads[right] === target) return true
@@ -52,7 +52,6 @@ var searchMatrix = function(matrix, target) {
     }
   }
   return false
-};
+}
 
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var sortColors = function(nums) {
+const sortColors = function (nums) {
   if (nums.length < 2) return
   const l = nums.length
   let white = 0
@@ -35,6 +35,5 @@ var sortColors = function(nums) {
     slow++
   }
   return nums
-};
+}
 // @lc code=end
-

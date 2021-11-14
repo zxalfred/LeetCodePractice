@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var validPalindrome = function(s) {
+const validPalindrome = function (s) {
   if (s.length === 1) return true
 
   let i = 0
@@ -47,6 +47,5 @@ var validPalindrome = function(s) {
     b--
   }
   return left || right
-};
+}
 // @lc code=end
-

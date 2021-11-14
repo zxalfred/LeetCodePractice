@@ -9,13 +9,11 @@
  * @param {string} word
  * @return {boolean}
  */
-var detectCapitalUse = function(word) {
+const detectCapitalUse = function (word) {
   if (word.length === 1) return true
-  const isUppercase = (s) => {
-    return s.charCodeAt() < 97
-  }
-  
-  let secondUppercase = isUppercase(word[1])
+  const isUppercase = (s) => s.charCodeAt() < 97
+
+  const secondUppercase = isUppercase(word[1])
   if (!isUppercase(word[0]) && secondUppercase) return false
 
   for (let i = 2; i < word.length; i++) {
@@ -23,7 +21,6 @@ var detectCapitalUse = function(word) {
   }
 
   return true
-};
+}
 
 // @lc code=end
-

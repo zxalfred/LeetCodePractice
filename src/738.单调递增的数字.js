@@ -9,10 +9,10 @@
  * @param {number} N
  * @return {number}
  */
-var monotoneIncreasingDigits = function(N) {
+const monotoneIncreasingDigits = function (N) {
   if (N < 10) return N
 
-  const n = String(N).split('').map(x => Number(x))
+  const n = String(N).split('').map((x) => Number(x))
   const len = n.length
   let i = 0
   for (; i < len - 1; i++) {
@@ -31,7 +31,6 @@ var monotoneIncreasingDigits = function(N) {
     }
   }
   return Number(n.join(''))
-};
+}
 
 // @lc code=end
-

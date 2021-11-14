@@ -25,14 +25,12 @@ const recursion = (a, b) => {
   return recursion(a.left, b.left) && recursion(a.right, b.right)
 }
 
-var isSubtree = function(s, t) {
+var isSubtree = function (s, t) {
   if (!s) return !t
 
   if (recursion(s, t)) {
     return true
-  } else {
-    return isSubtree(s.left, t) || isSubtree(s.right, t)
   }
-};
+  return isSubtree(s.left, t) || isSubtree(s.right, t)
+}
 // @lc code=end
-

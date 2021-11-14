@@ -9,7 +9,7 @@
  * @param {string} seq
  * @return {number[]}
  */
-var maxDepthAfterSplit = function(seq) {
+const maxDepthAfterSplit = function (seq) {
   let leftNum = 0
   const result = []
   for (let i = 0, l = seq.length; i < l; i++) {
@@ -18,6 +18,5 @@ var maxDepthAfterSplit = function(seq) {
     if (seq[i] !== ')') leftNum++
   }
   return result
-};
+}
 // @lc code=end
-

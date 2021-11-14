@@ -9,7 +9,7 @@
  * @param {string} senate
  * @return {string}
  */
-var predictPartyVictory = function(senate) {
+const predictPartyVictory = function (senate) {
   const map = new Map([['R', []], ['D', []]])
   const memo = new Array(senate.length).fill(true) // 使用过后为 false
   for (let i = 0; i < senate.length; i++) {
@@ -44,8 +44,6 @@ var predictPartyVictory = function(senate) {
       }
     }
   }
-};
-
+}
 
 // @lc code=end
-

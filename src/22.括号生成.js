@@ -9,7 +9,7 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function(n) {
+const generateParenthesis = function (n) {
   const result = []
   const l = 2 * n
   const gen = (cur, left, right) => {
@@ -19,16 +19,15 @@ var generateParenthesis = function(n) {
     }
 
     if (left < n) {
-      gen(cur + '(', left + 1, right)
+      gen(`${cur}(`, left + 1, right)
     }
     if (right < left) {
-      gen(cur + ')', left, right + 1)
+      gen(`${cur})`, left, right + 1)
     }
   }
 
   gen('', 0, 0)
 
   return result
-};
+}
 // @lc code=end
-

@@ -51,4 +51,3 @@ class Trie {
  * var param_3 = obj.startsWith(prefix)
  */
 // @lc code=end
-

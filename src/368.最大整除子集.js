@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var largestDivisibleSubset = function(nums) {
+const largestDivisibleSubset = function (nums) {
   const l = nums.length
   if (l === 1) return nums
   nums = nums.sort((a, b) => a - b)
@@ -28,7 +28,6 @@ var largestDivisibleSubset = function(nums) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

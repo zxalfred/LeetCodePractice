@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var firstMissingPositive = function(nums) {
+const firstMissingPositive = function (nums) {
   const { length: l } = nums
   for (let i = 0; i < l; i++) {
     if (nums[i] < 1) {
@@ -27,6 +27,5 @@ var firstMissingPositive = function(nums) {
     if (nums[i] > 0) return i + 1
   }
   return l + 1
-};
+}
 // @lc code=end
-

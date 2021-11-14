@@ -4,7 +4,7 @@
  * @return {number}
  */
 
-var lastRemaining = function(n, m) {
+const lastRemaining = function (n, m) {
   let ans = 0
 
   for (let i = 2; i <= n; i++) {
@@ -12,4 +12,4 @@ var lastRemaining = function(n, m) {
   }
 
   return ans
-};
+}

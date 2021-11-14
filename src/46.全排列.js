@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
- var permute = function(nums) {
+const permute = function (nums) {
   const result = []
   const l = nums.length
   const backTrack = (now, set) => {
@@ -30,6 +30,5 @@
   }
 
   return result
-};
+}
 // @lc code=end
-

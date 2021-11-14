@@ -9,7 +9,7 @@
  * @param {number} num
  * @return {boolean}
  */
-var checkPerfectNumber = function(num) {
+const checkPerfectNumber = function (num) {
   if (num === 1) return false
 
   const factor = []
@@ -23,6 +23,6 @@ var checkPerfectNumber = function(num) {
   }
 
   return factor.reduce((a, b) => a + b, 1) === num
-};
+}
 
 // @lc code=end

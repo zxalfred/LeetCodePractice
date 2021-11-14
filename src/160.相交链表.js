@@ -18,7 +18,7 @@
  * @param {ListNode} headB
  * @return {ListNode}
  */
-var getIntersectionNode = function(headA, headB) {
+const getIntersectionNode = function (headA, headB) {
   let p1 = headA
   let p2 = headB
   let resetCount = 0
@@ -38,5 +38,5 @@ var getIntersectionNode = function(headA, headB) {
     }
   }
   return null
-};
+}
 // @lc code=end

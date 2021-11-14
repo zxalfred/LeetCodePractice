@@ -9,7 +9,7 @@
  * @param {number[][]} matrix
  * @return {number[][]}
  */
-var updateMatrix = function(matrix) {
+const updateMatrix = function (matrix) {
   const rowLen = matrix.length
   const colLen = matrix[0].length
   const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
@@ -35,7 +35,7 @@ var updateMatrix = function(matrix) {
           const y = j + item[1]
           if (
             x >= 0 && x < rowLen
-            && y >=0 && y < colLen
+            && y >= 0 && y < colLen
             && !set.has(`${x},${y}`)
           ) {
             queue.push([x, y])
@@ -54,6 +54,5 @@ var updateMatrix = function(matrix) {
   }
 
   return result
-};
+}
 // @lc code=end
-

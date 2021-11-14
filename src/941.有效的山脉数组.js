@@ -9,7 +9,7 @@
  * @param {number[]} A
  * @return {boolean}
  */
-var validMountainArray = function(A) {
+const validMountainArray = function (A) {
   const l = A.length
   if (l < 2) return false
 
@@ -29,6 +29,5 @@ var validMountainArray = function(A) {
     }
   }
   return flag < 0
-};
+}
 // @lc code=end
-

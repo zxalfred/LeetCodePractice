@@ -10,7 +10,7 @@
  * @param {string} guess
  * @return {string}
  */
-var getHint = function(secret, guess) {
+const getHint = function (secret, guess) {
   let bulls = 0
   let cows = 0
   const lS = secret.length
@@ -40,7 +40,6 @@ var getHint = function(secret, guess) {
     }
   }
   return `${bulls}A${cows}B`
-};
+}
 
 // @lc code=end
-

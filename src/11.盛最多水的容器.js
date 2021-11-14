@@ -9,7 +9,7 @@
  * @param {number[]} height
  * @return {number}
  */
-var maxArea = function(height) {
+const maxArea = function (height) {
   let i = 0
   let j = height.length - 1
   let result = 0
@@ -28,6 +28,5 @@ var maxArea = function(height) {
   }
 
   return result
-};
+}
 // @lc code=end
-

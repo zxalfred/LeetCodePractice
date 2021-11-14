@@ -10,7 +10,7 @@
  * @param {number} K
  * @return {number[][]}
  */
-var kClosest = function(points, K) {
+const kClosest = function (points, K) {
   const map = new Map()
 
   const sorted = points.sort((a, b) => {
@@ -30,6 +30,5 @@ var kClosest = function(points, K) {
   })
 
   return sorted.slice(0, K)
-};
+}
 // @lc code=end
-

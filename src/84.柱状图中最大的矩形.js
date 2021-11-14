@@ -9,7 +9,7 @@
  * @param {number[]} heights
  * @return {number}
  */
-var largestRectangleArea = function(heights) {
+const largestRectangleArea = function (heights) {
   const l = heights.length
   const stack = [0]
   const arr = [0, ...heights, 0]
@@ -34,4 +34,3 @@ var largestRectangleArea = function(heights) {
 }
 
 // @lc code=end
-

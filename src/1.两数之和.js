@@ -11,13 +11,14 @@
  * @return {number[]}
  */
 const twoSum = function (nums, target) {
-  const map = new Map();
-  for (const i in nums) {
-    const diff = target - nums[i];
+  const map = new Map()
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i]
     if (map.has(diff)) {
-      return [map.get(diff), Number(i)];
+      return [map.get(diff), Number(i)]
     }
-    map.set(nums[i], i);
+    map.set(nums[i], i)
   }
-};
+  return []
+}
 // @lc code=end

@@ -9,7 +9,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var orangesRotting = function(grid) {
+const orangesRotting = function (grid) {
   const rowLen = grid.length
   const colLen = grid[0].length
   const xyDiff = [[1, 0], [-1, 0], [0, 1], [0, -1]]
@@ -31,7 +31,7 @@ var orangesRotting = function(grid) {
           const y = j + item[1]
           if (
             x >= 0 && x < rowLen
-            && y >=0 && y < colLen
+            && y >= 0 && y < colLen
             && grid[x][y] === 1
           ) {
             queue.push([x, y])
@@ -65,6 +65,5 @@ var orangesRotting = function(grid) {
   }
 
   return count
-};
+}
 // @lc code=end
-

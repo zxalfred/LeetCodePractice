@@ -10,11 +10,11 @@
  * @param {number} k
  * @return {number}
  */
- var findKthLargest = function(nums, k) {
+const findKthLargest = function (nums, k) {
   const swap = (a, i, j) => {
     [a[i], a[j]] = [a[j], a[i]]
   }
-  let partition = (arr, left, right) => {
+  const partition = (arr, left, right) => {
     const randomIndex = Math.floor(Math.random() * (right - left + 1) + left)
     const base = arr[randomIndex]
     swap(arr, right, randomIndex)
@@ -28,19 +28,17 @@
     swap(arr, i, right)
     return i
   }
-  
+
   const quickSelect = (arr, left, right, k) => {
     const index = partition(arr, left, right)
     if (index === k) {
       return arr[index]
-    } else if (index < k) {
+    } if (index < k) {
       return quickSelect(arr, index, right, k)
-    } else {
-      return quickSelect(arr, left, index - 1, k)
     }
+    return quickSelect(arr, left, index - 1, k)
   }
   return quickSelect(nums, 0, nums.length - 1, nums.length - k)
-};
+}
 
 // @lc code=end
-

@@ -39,7 +39,7 @@
 //   const end = prices.length - 1
 //   return Math.max(profit[end][0][0], profit[end][1][0], profit[end][2][0])
 // };
-var maxProfit = function(prices) {
+const maxProfit = function (prices) {
   let release1 = 0
   let release2 = 0
   let hold1 = -Infinity
@@ -55,4 +55,3 @@ var maxProfit = function(prices) {
   return release2
 }
 // @lc code=end
-

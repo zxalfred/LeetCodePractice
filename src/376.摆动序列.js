@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var wiggleMaxLength = function(nums) {
+const wiggleMaxLength = function (nums) {
   if (!nums.length) return 0
   if (nums.length <= 2) return 1
   let count = 0
@@ -27,7 +27,6 @@ var wiggleMaxLength = function(nums) {
   }
 
   return count + 1
-};
+}
 
 // @lc code=end
-

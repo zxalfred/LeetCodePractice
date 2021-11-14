@@ -17,7 +17,7 @@
  * @param {number} k
  * @return {ListNode}
  */
-var rotateRight = function(head, k) {
+const rotateRight = function (head, k) {
   if (!head) return null
   let curr = head
   let tail = null
@@ -28,7 +28,7 @@ var rotateRight = function(head, k) {
     tail = curr
     curr = curr.next
   }
-  k = k % len
+  k %= len
   if (k === 0) return head
 
   tail.next = head
@@ -42,5 +42,5 @@ var rotateRight = function(head, k) {
   prev.next = null
 
   return result
-};
+}
 // @lc code=end

@@ -9,7 +9,7 @@
  * @param {number[]} arr
  * @return {boolean}
  */
-var uniqueOccurrences = function(arr) {
+const uniqueOccurrences = function (arr) {
   const map = new Map()
   const nums = []
 
@@ -22,6 +22,5 @@ var uniqueOccurrences = function(arr) {
     nums.push(value)
   }
   return nums.length === new Set(nums).size
-};
+}
 // @lc code=end
-

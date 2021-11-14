@@ -9,7 +9,7 @@
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function(num) {
+const intToRoman = function (num) {
   let result = ''
   const map = new Map([
     [1000, 'M'],
@@ -24,7 +24,7 @@ var intToRoman = function(num) {
     [9, 'IX'],
     [5, 'V'],
     [4, 'IV'],
-    [1, 'I']
+    [1, 'I'],
   ])
 
   for (const [key, val] of map.entries()) {
@@ -35,6 +35,5 @@ var intToRoman = function(num) {
   }
 
   return result
-};
+}
 // @lc code=end
-

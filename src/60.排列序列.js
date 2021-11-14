@@ -41,7 +41,7 @@
 // };
 
 // 数学/找规律
-var getPermutation = function(n, k) {
+const getPermutation = function (n, k) {
   const nums = []
   let result = ''
   let factorial = 1
@@ -57,11 +57,10 @@ var getPermutation = function(n, k) {
     const index = k / factorial | 0
     result += nums[index]
     nums.splice(index, 1)
-    k = k % factorial
+    k %= factorial
   }
 
   return result
 }
 
 // @lc code=end
-

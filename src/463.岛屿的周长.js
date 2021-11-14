@@ -9,22 +9,22 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var islandPerimeter = function(grid) {
+const islandPerimeter = function (grid) {
   const row = grid.length
   const col = grid[0].length
-  const move = [[1,0],[-1,0],[0,1],[0,-1]]
+  const move = [[1, 0], [-1, 0], [0, 1], [0, -1]]
   let result = 0
 
   const dfs = (a, b) => {
     if (grid[a][b] === 0) return
     grid[a][b] = 2
     let side = 4
-    move.forEach(move => {
+    move.forEach((move) => {
       const x = a + move[0]
       const y = b + move[1]
       if (
-        x >=0 && x < row
-        && y >=0 && y < col
+        x >= 0 && x < row
+        && y >= 0 && y < col
         && grid[x][y] !== 0
       ) {
         side -= 1
@@ -45,6 +45,5 @@ var islandPerimeter = function(grid) {
   }
 
   return result
-};
+}
 // @lc code=end
-

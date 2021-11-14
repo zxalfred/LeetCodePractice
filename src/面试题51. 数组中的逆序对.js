@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var reversePairs = function(nums) {
+const reversePairs = function (nums) {
   let count = 0
   const merge = (a, b) => {
     const aL = a.length
@@ -10,7 +10,7 @@ var reversePairs = function(nums) {
     const result = []
     let i = 0
     let j = 0
-  
+
     while (i < aL && j < bL) {
       if (a[i] <= b[j]) {
         result.push(a[i])
@@ -21,7 +21,7 @@ var reversePairs = function(nums) {
         j++
       }
     }
-  
+
     return i < aL ? result.concat(a.slice(i)) : result.concat(b.slice(j))
   }
   const sort = (nums) => {
@@ -34,4 +34,4 @@ var reversePairs = function(nums) {
 
   sort(nums)
   return count
-};
+}

@@ -10,7 +10,7 @@
  * @param {number} target
  * @return {number}
  */
-var search = function(nums, target) {
+const search = function (nums, target) {
   if (nums[nums.length - 1] === target) return nums.length - 1
 
   const find = (nums, left = 0, right = nums.length - 1) => {
@@ -19,13 +19,11 @@ var search = function(nums, target) {
     if (nums[mid] === target) return mid
     if (nums[mid] > target) {
       return find(nums, left, mid)
-    } else {
-      return find(nums, mid + 1, right)
     }
+    return find(nums, mid + 1, right)
   }
 
   return find(nums)
-};
+}
 
 // @lc code=end
-

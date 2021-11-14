@@ -12,7 +12,7 @@
  * @param {number} c0
  * @return {number[][]}
  */
-var allCellsDistOrder = function(R, C, r0, c0) {
+const allCellsDistOrder = function (R, C, r0, c0) {
   const arr = []
 
   const map = new Map()
@@ -24,14 +24,14 @@ var allCellsDistOrder = function(R, C, r0, c0) {
   }
 
   return arr.sort((a, b) => {
-    let keyA = a.join(',')
+    const keyA = a.join(',')
     let distanceA = map.get(keyA)
     if (distanceA === undefined) {
       distanceA = Math.abs(a[0] - r0) + Math.abs(a[1] - c0)
       map.set(keyA, distanceA)
     }
 
-    let keyB = b.join(',')
+    const keyB = b.join(',')
     let distanceB = map.get(keyB)
     if (distanceB === undefined) {
       distanceB = Math.abs(b[0] - r0) + Math.abs(b[1] - c0)
@@ -40,6 +40,5 @@ var allCellsDistOrder = function(R, C, r0, c0) {
 
     return distanceA - distanceB
   })
-};
+}
 // @lc code=end
-

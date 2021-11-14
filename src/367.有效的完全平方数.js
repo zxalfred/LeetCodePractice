@@ -29,7 +29,7 @@
 //   return help(1, num >> 1)
 // };
 // 2. 公式
-var isPerfectSquare = function(num) {
+const isPerfectSquare = function (num) {
   if (num === 1) return true
   let square = 1
   let n = 1
@@ -42,4 +42,3 @@ var isPerfectSquare = function(num) {
   return false
 }
 // @lc code=end
-

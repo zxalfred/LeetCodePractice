@@ -16,7 +16,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var oddEvenList = function(head) {
+const oddEvenList = function (head) {
   if (!head || !head.next) return head
 
   let oddTail = head
@@ -34,6 +34,5 @@ var oddEvenList = function(head) {
   }
 
   return head
-};
+}
 // @lc code=end
-

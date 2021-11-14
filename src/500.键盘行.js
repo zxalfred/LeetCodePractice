@@ -9,7 +9,7 @@
  * @param {string[]} words
  * @return {string[]}
  */
-var findWords = function(words) {
+const findWords = function (words) {
   const firstRow = new Set(['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'])
   const secondRow = new Set(['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'])
   const thirdRow = new Set(['z', 'x', 'c', 'v', 'b', 'n', 'm'])
@@ -33,7 +33,6 @@ var findWords = function(words) {
   }
 
   return result
-};
+}
 
 // @lc code=end
-

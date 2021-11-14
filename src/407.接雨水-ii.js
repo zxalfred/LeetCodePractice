@@ -9,7 +9,7 @@
  * @param {number[][]} heightMap
  * @return {number}
  */
-var trapRainWater = function(heightMap) {
+const trapRainWater = function (heightMap) {
   const row = heightMap.length
   const col = heightMap[0].length
   if (row < 3 || col < 3) return 0
@@ -60,54 +60,60 @@ var trapRainWater = function(heightMap) {
   }
 
   return result
-};
+}
 
 class Heap {
   constructor(compare) {
     this._elements = []
     this._compare = compare
   }
+
   size() {
     return this._elements.length
   }
+
   add(el) {
-    let els = this._elements
+    const els = this._elements
     els.push(el)
     this.shiftUp(els.length - 1)
   }
+
   pop() {
-    let els = this._elements
+    const els = this._elements
     if (els.length === 1) return els.shift()
     const peak = els[0]
     els[0] = els.pop()
     this.shiftDown(0)
     return peak
   }
+
   shiftDown(parent) {
-    let els = this._elements, compare = this._compare
-    while (0 <= parent && parent < els.length) {
+    const els = this._elements; const
+      compare = this._compare
+    while (parent >= 0 && parent < els.length) {
       // 确保 child1 为值较小的子元素
       let child1 = parent * 2 + 1
       if (child1 >= els.length) return
-      let child2 = child1 + 1
+      const child2 = child1 + 1
       // NOTICE: child2 越界不需要 return
       if (child2 < els.length && compare(els[child2], els[child1]) < 0) child1 = child2
-      if (compare(els[parent], els[child1]) < 0) return
-      ;[els[parent], els[child1]] = [els[child1], els[parent]]
+      if (compare(els[parent], els[child1]) < 0) return;
+      [els[parent], els[child1]] = [els[child1], els[parent]]
       parent = child1
     }
   }
+
   shiftUp(child) {
-    let els = this._elements, compare = this._compare
-    while (0 <= child && child < els.length) {
-      let parent = Math.floor((child - 1) / 2)
+    const els = this._elements; const
+      compare = this._compare
+    while (child >= 0 && child < els.length) {
+      const parent = Math.floor((child - 1) / 2)
       if (parent < 0) return
-      if (compare(els[parent], els[child]) < 0) return
-      ;[els[parent], els[child]] = [els[child], els[parent]]
+      if (compare(els[parent], els[child]) < 0) return;
+      [els[parent], els[child]] = [els[child], els[parent]]
       child = parent
     }
   }
 }
 
 // @lc code=end
-

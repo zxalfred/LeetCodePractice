@@ -16,7 +16,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var insertionSortList = function(head) {
+const insertionSortList = function (head) {
   if (!head || !head.next) return head
   const start = new ListNode(-Infinity)
   start.next = head
@@ -41,6 +41,5 @@ var insertionSortList = function(head) {
     beforeCur = nextBeforeCur
   }
   return start.next
-};
+}
 // @lc code=end
-

@@ -9,8 +9,8 @@
  * @param {string} digits
  * @return {string[]}
  */
-var getOptions = function(input) {
-  switch(input) {
+const getOptions = function (input) {
+  switch (input) {
     case '2': return ['a', 'b', 'c']
     case '3': return ['d', 'e', 'f']
     case '4': return ['g', 'h', 'i']
@@ -21,7 +21,7 @@ var getOptions = function(input) {
     case '9': return ['w', 'x', 'y', 'z']
   }
 }
-var letterCombinations = function(digits) {
+const letterCombinations = function (digits) {
   if (!digits) return []
   const result = []
   const backtrack = (digits, s) => {
@@ -38,6 +38,5 @@ var letterCombinations = function(digits) {
   backtrack(digits, '')
 
   return result
-};
+}
 // @lc code=end
-

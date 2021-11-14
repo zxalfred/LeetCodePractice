@@ -2,7 +2,7 @@
  * @param {number} target
  * @return {number[][]}
  */
-var findContinuousSequence = function(target) {
+const findContinuousSequence = function (target) {
   let i = 1
   let j = 2
   const result = []
@@ -24,6 +24,6 @@ var findContinuousSequence = function(target) {
   }
 
   return result
-};
+}
 
 console.log(findContinuousSequence(15))

@@ -18,7 +18,7 @@
  * @param {TreeNode} root2
  * @return {boolean}
  */
- const leafSimilar = function(root1, root2) {
+const leafSimilar = function (root1, root2) {
   const leaf1 = []
   const leaf2 = []
 
@@ -34,7 +34,6 @@
   dfs(root2, leaf2)
 
   return leaf1.toString() === leaf2.toString()
-};
+}
 
 // @lc code=end
-

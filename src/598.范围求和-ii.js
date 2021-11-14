@@ -11,7 +11,7 @@
  * @param {number[][]} ops
  * @return {number}
  */
-var maxCount = function(m, n, ops) {
+const maxCount = function (m, n, ops) {
   if (!ops.length) return m * n
   let minRow = Infinity
   let minCol = Infinity
@@ -22,6 +22,5 @@ var maxCount = function(m, n, ops) {
   }
 
   return minRow * minCol
-};
+}
 // @lc code=end
-

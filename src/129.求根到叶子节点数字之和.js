@@ -16,7 +16,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var sumNumbers = function(root) {
+const sumNumbers = function (root) {
   if (!root) return 0
   let result = 0
 
@@ -36,6 +36,5 @@ var sumNumbers = function(root) {
   dfs(root, '')
 
   return result
-};
+}
 // @lc code=end
-

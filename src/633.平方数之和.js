@@ -9,7 +9,7 @@
  * @param {number} c
  * @return {boolean}
  */
-var judgeSquareSum = function(c) {
+const judgeSquareSum = function (c) {
   if (c === 0) return true
   const squareRoot = Math.sqrt(c)
   let i = 0
@@ -24,7 +24,6 @@ var judgeSquareSum = function(c) {
     }
   }
   return false
-};
+}
 
 // @lc code=end
-

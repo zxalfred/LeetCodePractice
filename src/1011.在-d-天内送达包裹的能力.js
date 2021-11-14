@@ -10,7 +10,7 @@
  * @param {number} D
  * @return {number}
  */
-const shipWithinDays = function(weights, D) {
+const shipWithinDays = function (weights, D) {
   let right = 0
   let left = 0
   const l = weights.length
@@ -22,7 +22,7 @@ const shipWithinDays = function(weights, D) {
   if (D === l) return left
   left--
   let mid = (left + right) >> 1
-  while(mid !== left) {
+  while (mid !== left) {
     let carried = 0
     let times = 1
     for (let i = 0; i < l; i++) {
@@ -40,7 +40,6 @@ const shipWithinDays = function(weights, D) {
     mid = (left + right) >> 1
   }
   return right
-};
+}
 
 // @lc code=end
-

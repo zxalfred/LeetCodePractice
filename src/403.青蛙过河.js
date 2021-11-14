@@ -9,7 +9,7 @@
  * @param {number[]} stones
  * @return {boolean}
  */
-var canCross = function(stones) {
+const canCross = function (stones) {
   if (stones[1] !== 1) return false
   const l = stones.length
   const dp = new Array(l)
@@ -22,7 +22,7 @@ var canCross = function(stones) {
     for (let j = i - 1; j > 0; j--) {
       const gap = stones[i] - stones[j]
       const optionSteps = dp[j]
-      diffs.some(diff => {
+      diffs.some((diff) => {
         if (optionSteps.has(gap + diff)) {
           dp[i].add(gap)
           return true
@@ -32,6 +32,5 @@ var canCross = function(stones) {
   }
 
   return !!dp[l - 1].size
-};
+}
 // @lc code=end
-

@@ -39,19 +39,19 @@ const quickSort = (array) => {
   return arr
 }
 
-var KthLargest = function(k, nums) {
+const KthLargest = function (k, nums) {
   this.arr = quickSort(nums)
   if (this.arr.length > k) {
     this.arr.length = k
   }
   this.k = k
-};
+}
 
-/** 
+/**
  * @param {number} val
  * @return {number}
  */
-KthLargest.prototype.add = function(val) {
+KthLargest.prototype.add = function (val) {
   const l = this.arr.length
   if (!l) {
     this.arr.push(val)
@@ -77,4 +77,3 @@ KthLargest.prototype.add = function(val) {
  * var param_1 = obj.add(val)
  */
 // @lc code=end
-

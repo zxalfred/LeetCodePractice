@@ -9,7 +9,7 @@
  * @param {string[][]} paths
  * @return {string}
  */
-var destCity = function(paths) {
+const destCity = function (paths) {
   const startSet = new Set()
 
   for ([start, end] of paths) {
@@ -19,6 +19,5 @@ var destCity = function(paths) {
   for ([start, end] of paths) {
     if (!startSet.has(end)) return end
   }
-};
+}
 // @lc code=end
-

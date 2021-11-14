@@ -9,7 +9,7 @@
  * @param {number} n
  * @return {number}
  */
-var numTrees = function(n) {
+const numTrees = function (n) {
   const dp = [0, 1, 2]
 
   for (let i = 3; i <= n; i++) {
@@ -23,6 +23,5 @@ var numTrees = function(n) {
   }
 
   return dp[n]
-};
+}
 // @lc code=end
-

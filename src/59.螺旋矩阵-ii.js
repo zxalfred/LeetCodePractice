@@ -9,7 +9,7 @@
  * @param {number} n
  * @return {number[][]}
  */
-var generateMatrix = function(n) {
+const generateMatrix = function (n) {
   const result = []
   for (let i = 0; i < n; i++) {
     result[i] = []
@@ -21,7 +21,7 @@ var generateMatrix = function(n) {
   let right = n - 1
   let x = 1
   const max = n * n
-  while(true) {
+  while (true) {
     for (let i = left; i <= right; i++) {
       result[up][i] = x
       x++
@@ -44,10 +44,9 @@ var generateMatrix = function(n) {
     }
     left++
   }
-    
+
   return result
-};
+}
 
 console.log(generateMatrix(5))
 // @lc code=end
-

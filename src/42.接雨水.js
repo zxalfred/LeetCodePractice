@@ -9,7 +9,7 @@
  * @param {number[]} height
  * @return {number}
  */
-var trap = function(height) {
+const trap = function (height) {
   let left = 0
   let right = height.length - 1
   let maxLeft = 0
@@ -37,6 +37,5 @@ var trap = function(height) {
   }
 
   return result
-};
+}
 // @lc code=end
-

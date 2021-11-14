@@ -9,7 +9,7 @@
  * @param {number[][]} A
  * @return {number}
  */
-var matrixScore = function(A) {
+const matrixScore = function (A) {
   const row = A.length
   const col = A[0].length
   const map = new Map() // record amount of 1 of each col
@@ -20,9 +20,8 @@ var matrixScore = function(A) {
         if (val === 0) {
           map.set(index, (map.get(index) || 0) + 1)
           return 1
-        } else {
-          return 0
         }
+        return 0
       })
     } else {
       A[i].forEach((val, index) => {
@@ -32,7 +31,7 @@ var matrixScore = function(A) {
       })
     }
   }
-  
+
   for (let i = 0; i < row; i++) {
     for (let j = 1; j < col; j++) {
       if ((map.get(j) || 0) < target) {
@@ -46,6 +45,5 @@ var matrixScore = function(A) {
   }
 
   return result
-};
+}
 // @lc code=end
-

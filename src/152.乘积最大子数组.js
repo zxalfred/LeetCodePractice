@@ -27,4 +27,3 @@ const maxProduct = function (nums) {
   return result
 }
 // @lc code=end
-

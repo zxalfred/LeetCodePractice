@@ -10,7 +10,7 @@
  * @param {string} b
  * @return {string}
  */
-var addBinary = function(a, b) {
+const addBinary = function (a, b) {
   if (a === '0') return b
   if (b === '0') return a
 
@@ -27,28 +27,27 @@ var addBinary = function(a, b) {
     carryBit = 0
     switch (sum) {
       case 0: {
-        result = '0' + result
+        result = `0${result}`
         break
       }
       case 1: {
-        result = '1' + result
+        result = `1${result}`
         break
       }
       case 2: {
-        result = '0' + result
+        result = `0${result}`
         carryBit = 1
         break
       }
       case 3: {
-        result = '1' + result
+        result = `1${result}`
         carryBit = 1
       }
     }
   }
-  if (carryBit === 1) result = '1' + result
+  if (carryBit === 1) result = `1${result}`
 
   return result
-};
+}
 
 // @lc code=end
-

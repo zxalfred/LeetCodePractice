@@ -9,14 +9,14 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
+const removeDuplicates = function (nums) {
   const l = nums.length
   if (l < 2) return l
   let slow = 1
   let fast = 1
 
   while (fast < l) {
-    if (nums[fast] != nums[slow - 1]) {
+    if (nums[fast] !== nums[slow - 1]) {
       nums[slow] = nums[fast]
       slow++
     }
@@ -24,6 +24,5 @@ var removeDuplicates = function(nums) {
   }
 
   return slow
-};
+}
 // @lc code=end
-

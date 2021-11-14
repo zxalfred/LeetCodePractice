@@ -11,7 +11,7 @@
  * @param {number} query_glass
  * @return {number}
  */
-var champagneTower = function(poured, query_row, query_glass) {
+const champagneTower = function (poured, query_row, query_glass) {
   const arr = new Array(100)
   for (let i = 0; i < 100; i++) {
     arr[i] = new Array(i + 1).fill(0)
@@ -28,8 +28,6 @@ var champagneTower = function(poured, query_row, query_glass) {
   }
 
   return Math.min(1, arr[query_row][query_glass] || 0)
-};
-console.log(champagneTower(
-  100000009, 33, 17))
+}
+console.log(champagneTower(100000009, 33, 17))
 // @lc code=end
-

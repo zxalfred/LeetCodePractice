@@ -10,7 +10,7 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
-var intersection = function(nums1, nums2) {
+const intersection = function (nums1, nums2) {
   let set1 = new Set(nums1)
   let set2 = new Set(nums2)
   const set3 = new Set()
@@ -23,6 +23,5 @@ var intersection = function(nums1, nums2) {
     }
   }
   return [...set3]
-};
+}
 // @lc code=end
-

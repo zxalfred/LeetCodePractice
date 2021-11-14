@@ -10,7 +10,7 @@
  * @param {number[]} cost
  * @return {number}
  */
-var canCompleteCircuit = function(gas, cost) {
+const canCompleteCircuit = function (gas, cost) {
   const len = gas.length
 
   for (let i = 0; i < len; i++) {
@@ -33,7 +33,6 @@ var canCompleteCircuit = function(gas, cost) {
   }
 
   return -1
-};
+}
 
 // @lc code=end
-

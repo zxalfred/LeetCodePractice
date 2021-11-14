@@ -33,7 +33,7 @@ const quickSort = (nums) => {
   sort(nums)
   return nums
 }
-var combinationSum2 = function(candidates, target) {
+const combinationSum2 = function (candidates, target) {
   quickSort(candidates)
   const result = []
   const backtrack = (arr, index, sum) => {
@@ -54,6 +54,5 @@ var combinationSum2 = function(candidates, target) {
   backtrack([], 0, 0)
 
   return result
-};
+}
 // @lc code=end
-

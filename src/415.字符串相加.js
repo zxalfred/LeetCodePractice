@@ -10,11 +10,11 @@
  * @param {string} num2
  * @return {string}
  */
-var addStrings = function(num1, num2) {
+const addStrings = function (num1, num2) {
   let i = num1.length - 1
   let j = num2.length - 1
   let carryFlag = false
-  let result = []
+  const result = []
   while (i >= 0 || j >= 0) {
     let sum = Number(i >= 0 ? num1[i] : 0) + Number(j >= 0 ? num2[j] : 0)
     if (carryFlag) {
@@ -23,7 +23,7 @@ var addStrings = function(num1, num2) {
     }
     if (sum > 9) {
       carryFlag = true
-      sum = sum % 10
+      sum %= 10
     }
     result.push(String(sum))
     i--
@@ -32,7 +32,6 @@ var addStrings = function(num1, num2) {
   if (carryFlag) result.push('1')
 
   return result.reverse().join('')
-};
+}
 
 // @lc code=end
-

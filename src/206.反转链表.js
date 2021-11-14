@@ -17,23 +17,23 @@
  * @return {ListNode}
  */
 // 1. traverse
-var reverseList = function(head) {
+const reverseList = function (head) {
   if (!head || !head.next) return head
   let cur = head
   let prev = null
 
   while (cur) {
-    const next = cur.next 
+    const { next } = cur
     cur.next = prev
     prev = cur
     cur = next
   }
 
   return prev
-};
+}
 
 // 2. recursion
-var reverseList2 = function(head) {
+var reverseList2 = function (head) {
   if (!head || !head.next) return head
 
   const newHead = reverseList2(head.next)
@@ -43,4 +43,3 @@ var reverseList2 = function(head) {
 }
 
 // @lc code=end
-

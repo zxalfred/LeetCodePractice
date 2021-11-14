@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {string}
  */
-var removeKdigits = function(num, k) {
+const removeKdigits = function (num, k) {
   const stack = []
   const len = num.length
 
@@ -42,4 +42,3 @@ var removeKdigits = function(num, k) {
 }
 
 // @lc code=end
-

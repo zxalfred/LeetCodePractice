@@ -21,7 +21,7 @@
  *     };
  * };
  */
-var findPeak = function(mountainArr, left, right) {
+var findPeak = function (mountainArr, left, right) {
   const length = mountainArr.length()
   let leftVal
   let rightVal
@@ -38,51 +38,49 @@ var findPeak = function(mountainArr, left, right) {
   if (midVal > leftVal && midVal > rightVal) {
     return mid
   }
-  if (midVal > leftVal && midVal < rightVal)  {
+  if (midVal > leftVal && midVal < rightVal) {
     return findPeak(mountainArr, mid, right)
-  } else {
-    return findPeak(mountainArr, left, mid)
   }
+  return findPeak(mountainArr, left, mid)
 }
 /**
  * @param {number} target
  * @param {MountainArray} mountainArr
  * @return {number}
  */
-var findInMountainArray = function(target, mountainArr) {
-    const length = mountainArr.length()
-    const peakIndex = findPeak(mountainArr, 0, length - 1)
-    const peakVal = mountainArr.get(peakIndex)
-    if (peakVal === target) return peakIndex
-    if (mountainArr.get(0) === target) return 0
-    
-    let left = 0
-    let right = peakIndex
-    while (right - left > 1) {
-      const mid = left + ((right - left) >> 1)
-      const midVal = mountainArr.get(mid)
-      console.log(midVal)
-      if (midVal === target) return mid
-      if (midVal > target) {
-        right = mid
-      } else {
-        left = mid
-      }
-    }
-    left = peakIndex
-    right = length - 1
-    while (right - left > 1) {
-      const mid = left + ((right - left) >> 1)
-      const midVal = mountainArr.get(mid)
-      if (midVal === target) return mid
-      if (midVal < target) {
-        right = mid
-      } else {
-        left = mid
-      }
-    }
-    if (mountainArr.get(length - 1) === target) return length - 1
-    return -1
-};
-// @lc code=end
+const findInMountainArray = function (target, mountainArr) {
+  const length = mountainArr.length()
+  const peakIndex = findPeak(mountainArr, 0, length - 1)
+  const peakVal = mountainArr.get(peakIndex)
+  if (peakVal === target) return peakIndex
+  if (mountainArr.get(0) === target) return 0
 
+  let left = 0
+  let right = peakIndex
+  while (right - left > 1) {
+    const mid = left + ((right - left) >> 1)
+    const midVal = mountainArr.get(mid)
+    console.log(midVal)
+    if (midVal === target) return mid
+    if (midVal > target) {
+      right = mid
+    } else {
+      left = mid
+    }
+  }
+  left = peakIndex
+  right = length - 1
+  while (right - left > 1) {
+    const mid = left + ((right - left) >> 1)
+    const midVal = mountainArr.get(mid)
+    if (midVal === target) return mid
+    if (midVal < target) {
+      right = mid
+    } else {
+      left = mid
+    }
+  }
+  if (mountainArr.get(length - 1) === target) return length - 1
+  return -1
+}
+// @lc code=end

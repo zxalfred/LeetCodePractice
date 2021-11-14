@@ -10,11 +10,10 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(k, prices) {
+const maxProfit = function (k, prices) {
   if (!prices.length) return 0
   k = Math.min(~~(prices.length / 2), k)
   const profit = []
-
 
   for (let n = 0; n <= k; n++) {
     profit[n] = [0, -Infinity]
@@ -39,6 +38,5 @@ var maxProfit = function(k, prices) {
   }
 
   return Math.max(...result)
-};
+}
 // @lc code=end
-

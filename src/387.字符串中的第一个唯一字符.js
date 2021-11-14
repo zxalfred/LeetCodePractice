@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {number}
  */
-var firstUniqChar = function(s) {
+const firstUniqChar = function (s) {
   const arr = new Array(26).fill(0)
   const l = s.length
   for (let i = 0; i < l; i++) {
@@ -21,6 +21,5 @@ var firstUniqChar = function(s) {
     if (arr[index] === 1) return i
   }
   return -1
-};
+}
 // @lc code=end
-

@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var canJump = function(nums) {
+const canJump = function (nums) {
   if (nums.length < 2) return true
   let last = 0
   const l = nums.length - 1
@@ -22,6 +22,5 @@ var canJump = function(nums) {
     }
   }
   return false
-};
+}
 // @lc code=end
-

@@ -10,11 +10,11 @@
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
+const convert = function (s, numRows) {
   if (!s) return ''
   if (numRows === 1) return s
   const arr = []
-  const length = s.length
+  const { length } = s
   let flag = 1
   let index = 0
 
@@ -27,7 +27,7 @@ var convert = function(s, numRows) {
     index += flag
     if (index === 0) {
       flag = 1
-    } else if (index === numRows - 1){
+    } else if (index === numRows - 1) {
       flag = -1
     }
   }
@@ -36,6 +36,5 @@ var convert = function(s, numRows) {
     result += row.join('')
   }
   return result
-};
+}
 // @lc code=end
-

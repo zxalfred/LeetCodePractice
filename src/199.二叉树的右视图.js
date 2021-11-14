@@ -16,7 +16,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function(root) {
+const rightSideView = function (root) {
   if (!root) return []
 
   const queue = [root]
@@ -34,6 +34,5 @@ var rightSideView = function(root) {
     result.push(currRow.pop().val)
   }
   return result
-};
+}
 // @lc code=end
-
