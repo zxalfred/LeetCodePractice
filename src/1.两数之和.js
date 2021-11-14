@@ -10,15 +10,14 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums: number[], target: number): [number, number] {
-  const map = new Map()
+const twoSum = function (nums, target) {
+  const map = new Map();
   for (const i in nums) {
-    const diff = target - nums[i]
+    const diff = target - nums[i];
     if (map.has(diff)) {
-      return [map.get(diff), Number(i)]
+      return [map.get(diff), Number(i)];
     }
-    map.set(nums[i], i)
+    map.set(nums[i], i);
   }
 };
 // @lc code=end
-
