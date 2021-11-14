@@ -18,6 +18,21 @@
  * @return {void} Do not return anything, modify root in-place instead.
  */
 const flatten = function (root) {
+  const help = (node) => {
+    if (!node) return node
+    const { right } = node
+    node.right = help(node.left)
+    node.left = null
+    let cur = node
+    while (cur.right) {
+      cur = cur.right
+    }
+    cur.right = help(right)
 
+    return node
+  }
+
+  return help(root)
 }
+
 // @lc code=end
