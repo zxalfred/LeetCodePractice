@@ -22,5 +22,6 @@ module.exports = {
     'max-len': 0,
     'no-param-reassign': 0,
     'consistent-return': 0,
+    'no-bitwise': 0,
   },
 };
