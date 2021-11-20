@@ -4,9 +4,10 @@
     "target": "ES2020",
     "noImplicitAny": true,
     "outDir": "./dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": "src/"
   },
   "include": [
-    "./*"
+    "src/"
   ]
 }
