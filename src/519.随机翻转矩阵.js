@@ -27,7 +27,7 @@ Solution.prototype.flip = function() {
   this.map.set(x, this.map.get(this.total) || this.total)
   return [~~(index / this.n), index % this.n]
 };
-
+ 
 /**
  * @return {void}
  */
