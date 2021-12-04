@@ -10,16 +10,15 @@
  * @param {number} y
  * @return {number}
  */
-var hammingDistance = function(x, y) {
+const hammingDistance = function (x, y) {
   let i = x ^ y
   let result = 0
 
   while (i > 0) {
     if ((i & 1) === 1) result++
-    i = i >> 1
+    i >>= 1
   }
 
   return result
-};
+}
 // @lc code=end
-
