@@ -26,6 +26,7 @@ module.exports = {
     'no-restricted-syntax': 0,
     'indent': 0,
     '@typescript-eslint/indent': ['error', 2],
-    'no-continue': 0
+    'no-continue': 0,
+    'prefer-const': 0,
   },
 };
