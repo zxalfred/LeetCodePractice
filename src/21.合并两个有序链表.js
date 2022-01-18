@@ -17,7 +17,7 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function (l1, l2) {
+const mergeTwoLists = function (l1, l2) {
   if (!l1 || !l2) return l1 || l2
 
   if (l1.val <= l2.val) {

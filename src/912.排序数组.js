@@ -30,7 +30,7 @@ const merge = function (left, right) {
   return result.concat(left.slice(i))
 }
 
-const sortArray1 = function (nums) {
+const sortArray = function (nums) {
   if (nums.length < 2) return nums
   const middle = nums.length >> 1
   const left = nums.slice(0, middle)

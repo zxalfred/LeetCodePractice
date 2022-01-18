@@ -28,5 +28,6 @@ module.exports = {
     '@typescript-eslint/indent': ['error', 2],
     'no-continue': 0,
     'prefer-const': 0,
+    'max-classes-per-file': 0,
   },
 };
