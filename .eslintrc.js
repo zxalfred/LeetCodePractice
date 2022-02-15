@@ -29,5 +29,6 @@ module.exports = {
     'no-continue': 0,
     'prefer-const': 0,
     'max-classes-per-file': 0,
+    'camelcase': 0
   },
 };
