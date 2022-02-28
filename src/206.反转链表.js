@@ -33,7 +33,7 @@ const reverseList = function (head) {
 }
 
 // 2. recursion
-var reverseList2 = function (head) {
+const reverseList2 = function (head) {
   if (!head || !head.next) return head
 
   const newHead = reverseList2(head.next)

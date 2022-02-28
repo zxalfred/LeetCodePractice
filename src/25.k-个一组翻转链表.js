@@ -31,7 +31,7 @@ const reverseList = (node) => {
   return prev
 }
 
-var reverseKGroup = function (head, k) {
+const reverseKGroup = function (head, k) {
   if (!head || !head.next || k === 1) return head
 
   let tail = head
